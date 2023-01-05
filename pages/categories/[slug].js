@@ -18,8 +18,8 @@ export async function getServerSideProps({ params }) {
 const CategoryList = ({ slug }) => {
   const context = useContext(StateContext)
   // const [isLoading , setisLoading] = useState(false)
-  let pageProducts = []
-  let pageCategory = []
+  const pageProducts = []
+  const pageCategory = []
   context.products.data?.map((product) =>
     product.categories.map((category) =>
       category.slug == slug ? pageProducts.push(product) : null,

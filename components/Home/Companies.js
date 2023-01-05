@@ -5,7 +5,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import Link from 'next/link'
 const Companies = ({ categories }) => {
-  let brands = []
+  const brands = []
   categories?.map((cat) => {
     if (cat.slug == 'brands') {
       brands.push(cat.children)

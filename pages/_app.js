@@ -25,11 +25,9 @@ function MyApp({ Component, pageProps }) {
   const [products, setProducts] = useState([])
   const [name, setName] = useState('')
   const [user, setUser] = useState({})
-  let messageStyle = ['text-tiny']
+  const messageStyle = ['text-tiny']
   const [message, setMessage] = useState('')
   const [type, setType] = useState(1) // 1 is success , 0 is error
-
-  let orderId = 0
   // console.log(orderId)
 
   // cart state
@@ -214,19 +212,19 @@ function MyApp({ Component, pageProps }) {
     )
 
     await commerce.cart.refresh().then((cart) => setCart(cart))
-    let params = {
+    const params = {
       f_name: f_name,
       s_name: s_name,
       phone: phone,
       email: email,
       address: address,
     }
-    // await emailjs.send(
-    //   'service_2ceha86',
-    //   'template_31eib0b',
-    //   params,
-    //   '-tJB3Q51ddpz99KGg',
-    // )
+    await emailjs.send(
+      'service_2ceha86',
+      'template_31eib0b',
+      params,
+      '-tJB3Q51ddpz99KGg',
+    )
     event.target.f_name.value = ''
     event.target.s_name.value = ''
     event.target.phone.value = ''

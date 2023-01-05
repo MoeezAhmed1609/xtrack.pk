@@ -13,7 +13,7 @@ import { v4 as uuid } from 'uuid'
 const dashboard = () => {
   const [userOrder, setUserOrder] = useState([])
   // const [reviewNumber, setReviewNumber] = useState(1)
-  let reviewNumber = uuid()
+  const reviewNumber = uuid()
   const context = useContext(StateContext)
   // const cart = useContext(CartStateContext)
   const auth = getAuth()
@@ -274,7 +274,7 @@ const dashboard = () => {
                                       </button>
                                     </form>
                                   </div>
-                                  <img src={product.image?.url} height="70px" />
+                                  <img src={product.image?.url} height="70px" alt={product.product_name} />
                                   <span className="text-small d-none d-sm-block">
                                     {product.product_name}
                                   </span>

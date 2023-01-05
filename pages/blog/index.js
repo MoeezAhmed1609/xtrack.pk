@@ -4,7 +4,7 @@ import BlockContent from '@sanity/block-content-to-react'
 import Link from 'next/link'
 
 const blog = () => {
-  const [posts, setPosts] = useState([])
+  const [posts, setPosts] = useState([]);
   useEffect(() => {
     client
       .fetch(`*[_type == 'blogs']`)
@@ -21,9 +21,9 @@ const blog = () => {
       </div>
       {posts ? (
         posts.map((post) => (
-          <Link href={`/blog/${post.Slug.current}`} className='text-decoration-none text-dark'>
+          <Link href={`/blog/${post.Slug.current}`} className='text-decoration-none text-dark' key={post.id}>
             <div className="row py-4">
-              {/* {console.log(post)} */}
+              {console.log(post)}
               <div className="col-lg-7 col-12">
                 <img
                   className="blog-img"

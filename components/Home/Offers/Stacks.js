@@ -2,7 +2,7 @@ import React from 'react'
 import Slider from '../../Slider'
 
 const Stacks = ({products}) => {
-  let stackP = []
+  const stackP = []
   products.map((product) => {
     if(product.categories[0]?.slug == 'stacks'){
       stackP.push(product)

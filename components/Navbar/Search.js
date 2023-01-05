@@ -42,7 +42,7 @@ const Search = ({ products }) => {
           ) : (
             products.data.filter((product) => product.name.toLowerCase().includes(query))
               .map((product) => (
-                <Link href={`/products/${product.id}`} className='text-decoration-none'>
+                <Link href={`/products/${product.id}`} className='text-decoration-none' key={product.id}>
                 <div className="row py-3">
                   <div className="col-3 ms-sm-2">
                     <img

@@ -1,6 +1,7 @@
 import React from 'react'
 import { client, urlFor } from '../../lib/client'
 import BlockContent from '@sanity/block-content-to-react'
+import Image from 'next/image'
 
 const Posts = ({ post }) => {
   console.log(post)
@@ -8,7 +9,7 @@ const Posts = ({ post }) => {
     <>
       <div className="container-fluid py-4 post-box">
         <div className="post-img-box">
-          <img className="post-img" src={urlFor(post.coverimage?.asset._ref)} />
+          <Image className="post-img" src={urlFor(post.coverimage?.asset._ref)} alt={post.title} />
         </div>
         <div className="container text-center pt-5">
           <h3 className="text-uppercase fw-bold">{post.title}</h3>

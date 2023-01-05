@@ -62,7 +62,7 @@ const Product = ({ product }) => {
   const openInNewTab = (url) => {
     window.open(url, '_blank', 'noopener,noreferrer')
   }
-  let starRatings = []
+  const starRatings = []
   let averageReview = ''
   Object.values(reviews)?.map((review) => {
     starRatings.push(Number(review.rating))
@@ -126,6 +126,7 @@ const Product = ({ product }) => {
             ) : (
               <img
                 src={product.assets[0].url}
+                alt={product.name}
                 className="cursor-p"
                 style={{ height: '420px' }}
                 onClick={() => openInNewTab(product.assets[0].url)}
@@ -441,7 +442,7 @@ const Product = ({ product }) => {
                       {review.rating
                         ? Array.from({ length: 5 }, (elem, index) => {
                             return (
-                              <span className="fs-6 text-warning">
+                              <span className="fs-6 text-warning" key={index}>
                                 {review.rating >= index ? (
                                   <AiFillStar />
                                 ) : (

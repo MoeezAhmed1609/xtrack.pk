@@ -7,28 +7,28 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 
 const Categories = ({ products, categories, slug, setSlug }) => {
-  let proteinSlug = []
+  const proteinSlug = []
 
   categories.map((category) => {
     if (category.slug == 'proteins') {
       proteinSlug.push(category)
     }
   })
-  let gainerSlug = []
+  const gainerSlug = []
 
   categories.map((category) => {
     if (category.slug == 'weight-gainers') {
       gainerSlug.push(category)
     }
   })
-  let aminosSlug = []
+  const aminosSlug = []
 
   categories.map((category) => {
     if (category.slug == 'bcaa-eaa' || category.slug == 'pre-workouts') {
       aminosSlug.push(category)
     }
   })
-  let healthSlug = []
+  const healthSlug = []
 
   categories.map((category) => {
     if (category.slug == 'multivitamins') {
@@ -36,11 +36,11 @@ const Categories = ({ products, categories, slug, setSlug }) => {
     }
   })
 
-  let proteinP = []
-  let gainerP = []
-  let workoutP = []
-  let healthP = []
-  let brands = []
+  const proteinP = []
+  const gainerP = []
+  const workoutP = []
+  const healthP = []
+  const brands = []
   products?.map((product) => {
     if (product.categories[0]?.slug == 'proteins') {
       proteinP.push(product)

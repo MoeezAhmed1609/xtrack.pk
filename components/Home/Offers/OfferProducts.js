@@ -2,7 +2,7 @@ import React from 'react'
 import Slider from '../../Slider'
 
 const NewsProducts = ({ products , discount }) => {
-  let offerP = []
+  const offerP = []
   products.map((product) => {
     if(product.categories[0].slug == 'offers'){
       offerP.push(product)
