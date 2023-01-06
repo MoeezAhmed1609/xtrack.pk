@@ -173,8 +173,6 @@ function MyApp({ Component, pageProps }) {
   //     console.error(error)
   //   })
 
-  console.log(token)
-
   const logOutHandler = () => {
     auth.signOut().then(() => (window.location = '/'))
   }
