@@ -102,7 +102,6 @@ const Categories = ({ products, categories, slug, setSlug }) => {
             }}
           >
             {brands?.map((cat) => {
-              // console.log(cat)
               return (
                 <SwiperSlide key={cat.id}>
                   <Link

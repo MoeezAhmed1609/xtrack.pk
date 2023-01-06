@@ -25,7 +25,6 @@ const OffCanvas = () => {
         aria-labelledby="offcanvasRightLabel"
       >
         <div className="offcanvas-header">
-          {/* Change logo here */}
           <div className="col p-0 align-self-center ms-lg-3">
             <Link href="/">
               <Image
@@ -134,23 +133,6 @@ const OffCanvas = () => {
                   <Link href="/categories/accessories" className="text-decoration-none text-white">
                     Accessories
                   </Link>
-                  {/* <ul className="offcanvas-list text-start p-0 ps-3 py-2">
-                    <li>
-                      <a className="nav-link py-2" href="#">
-                        Shakers
-                      </a>
-                    </li>
-                    <li>
-                      <a className="nav-link py-2" href="#">
-                        Lifting belts
-                      </a>
-                    </li>
-                    <li>
-                      <a className="nav-link py-2" href="#">
-                        Hand Wraps & grips
-                      </a>
-                    </li>
-                  </ul> */}
                 </li>
                 <li className="py-1">
                   <span className="text-decoration-none text-white">

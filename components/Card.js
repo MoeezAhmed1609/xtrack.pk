@@ -16,7 +16,6 @@ const Card = ({ product, discount }) => {
             <span className="text-white text-small">
               {discount?.map((disc) => {
                 if (product.name.toUpperCase() == disc.name.toUpperCase()) {
-                  // console.log(product)
                   return (
                     <span>
                       {disc.percentage} %
@@ -52,15 +51,6 @@ const Card = ({ product, discount }) => {
             </span>
           </div>
           <hr className="bg-white mt-1 mb-0" />
-          {/* <div className="container d-flex justify-content-center align-items-center py-2">
-            <span>
-              <AiOutlineStar />
-              <AiOutlineStar />
-              <AiOutlineStar />
-              <AiOutlineStar />
-              <AiOutlineStar />
-            </span>
-          </div> */}
           <div className="row align-items-center text-center pt-3">
             <span className="col p-0">
               <span className="fs-6 ps-2 fw-bold">
@@ -68,7 +58,6 @@ const Card = ({ product, discount }) => {
                 <br />
                 {discount?.map((disc) => {
                   if (product.name.toUpperCase() == disc.name.toUpperCase()) {
-                    // console.log(product)
                     return (
                       <span
                         key={disc._id}

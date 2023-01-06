@@ -6,7 +6,6 @@ import StateContext from '../../context/StateContext'
 const success = () => {
   const context = useContext(CartStateContext)
   const state = useContext(StateContext)
-  // console.log(state.auth)
 
   return (
     <div className="container text-center empty-box">

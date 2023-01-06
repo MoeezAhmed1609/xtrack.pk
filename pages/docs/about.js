@@ -126,18 +126,6 @@ const about = () => {
               </span>
             </div>
           </div>
-          {/* <div className="text-center text-uppercase fw-bold fs-3 pt-5 pb-3">
-            <span>Connect with Us</span>
-          </div>
-          <span className="text-small text-secondary">
-            E-mail address xtrack.pk@gmail.com
-            <br /> 
-            Phone number:+92333-2117276
-            <br /> 
-            Facebook. xtrack.pk
-            <br />
-            Instagram. x_track.pk
-          </span> */}
         </div>
       </div>
     </div>

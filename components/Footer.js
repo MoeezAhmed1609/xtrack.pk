@@ -96,7 +96,6 @@ const Footer = () => {
                     Blog
                   </Link>
                 </li>
-                {/* <li className="list-group-item bg-transparent border-0 text-white">And a fifth one</li> */}
               </ul>
             </div>
           </div>
@@ -124,13 +123,6 @@ const Footer = () => {
                       </span>
                     </a>
                   </li>
-                  {/* <li>
-                    <a href="/" target="blank">
-                      <span>
-                        <AiOutlineTwitter />
-                      </span>
-                    </a>
-                  </li> */}
                   <li>
                     <a href="mailto: xtrack.pk@gmail.com" target="blank">
                       <span>

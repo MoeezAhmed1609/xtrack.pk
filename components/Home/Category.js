@@ -1,14 +1,8 @@
-import React , { useContext } from 'react'
+import React from 'react'
 import Link from 'next/link'
 import Slider from '../Slider'
-// import StateContext from '../../context/StateContext'
 
 const Category = ({ title, products , categories }) => {
-  // const context = useContext(StateContext);
-  // // console.log(products)
-  // const getSetSlug = (slug) => {
-  //   context.setSlug(slug)
-  // }
   return (
     <>
         <div className="col-lg-2 col-md-3 col-4 my-2 text-center bg-dark product-tag-box">

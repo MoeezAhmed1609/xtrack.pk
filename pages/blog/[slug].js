@@ -4,7 +4,6 @@ import BlockContent from '@sanity/block-content-to-react'
 import Image from 'next/image'
 
 const Posts = ({ post }) => {
-  console.log(post)
   return (
     <>
       <div className="container-fluid py-4 post-box">
@@ -28,7 +27,6 @@ const Posts = ({ post }) => {
 
 export const getServerSideProps = async ({ params }) => {
   const { slug } = params
-  console.log(slug)
   const query = `*[_type == 'blogs' && Slug.current == '${slug}'][0]`
   const post = await client.fetch(query)
 

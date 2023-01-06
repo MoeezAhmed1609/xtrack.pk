@@ -6,7 +6,6 @@ import commerce from '../lib/commerce'
 
 const cart = () => {
   const context = useContext(CartStateContext)
-  // console.log(state)
   const isEmpty = context.cart.line_items?.length === 0
   if (isEmpty) {
     return (
@@ -55,7 +54,6 @@ const cart = () => {
                     <tbody>
                       {context.cart.line_items?.map((item) => (
                         <>
-                          {/* {console.log(item)} */}
                           <CartItem key={item.id} {...item} />
                         </>
                       ))}
@@ -67,7 +65,6 @@ const cart = () => {
           </div>
           <div className="col-lg-4 col-12 bg-light mt-5 border total-box">
             <CartTotal cart={context.cart} />
-            {/* {console.log(context.cart)} */}
           </div>
         </div>
       </div>
@@ -130,7 +127,6 @@ const CartItem = ({
                 {option.option_name}
               </span>))}
           </span>
-          {/* {console.log(context.cart.line_items.map line.selected_options.map option.option_name)} */}
         </th>
         <td className="pt-4 pb-0">
           <div className="d-flex align-items-center">

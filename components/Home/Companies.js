@@ -24,7 +24,6 @@ const Companies = ({ categories }) => {
           </span>
         </div>
         <div className="row mb-4 justify-content-center align-items-center">
-          {/* {console.log(brands)} */}
           <Swiper
             navigation={true}
             grabCursor={true}
@@ -51,7 +50,6 @@ const Companies = ({ categories }) => {
             }}
           >
             {brands[0]?.map((cat) => {
-              // console.log(cat)
               return (
                 <SwiperSlide key={cat.id} className='d-flex justify-content-center align-items-center'>
                   <Link href={`/categories/${cat.slug}`} className="text-decoration-none text-dark">

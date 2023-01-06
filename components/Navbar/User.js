@@ -80,8 +80,4 @@ const User = () => {
   )
 }
 
-const Register = () => {
-  return <>{/* Button trigger modal */}</>
-}
-
 export default User

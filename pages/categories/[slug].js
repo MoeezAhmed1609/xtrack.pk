@@ -17,7 +17,6 @@ export async function getServerSideProps({ params }) {
 
 const CategoryList = ({ slug }) => {
   const context = useContext(StateContext)
-  // const [isLoading , setisLoading] = useState(false)
   const pageProducts = []
   const pageCategory = []
   context.products.data?.map((product) =>
@@ -25,7 +24,6 @@ const CategoryList = ({ slug }) => {
       category.slug == slug ? pageProducts.push(product) : null,
     ),
   )
-  // context.products.data?.map((product) => product.categories.map((category) => category.slug) == slug ? pageProducts.push(product) : null )
   context.category.map((cat) =>
     cat.slug == slug ? pageCategory.push(cat) : null,
   )
@@ -84,13 +82,6 @@ const CategoryList = ({ slug }) => {
                           <br />
                         </span>
                       </span>
-                      {/* <span
-                        className="text-danger fs-4 fw-bold col-3 p-0 cart-card"
-                        aria-label="Add to cart"
-                        // onClick={addToCart}
-                      >
-                        <BiCart />
-                      </span> */}
                     </div>
                   </div>
                 </div>

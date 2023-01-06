@@ -68,7 +68,6 @@ const checkout = () => {
         await commerce.checkout
           .generateToken(cartId, { type: 'cart' })
           .then((data) => {
-            console.log(data)
             setToken(data)
             fetchCountries(data.id)
           })

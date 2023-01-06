@@ -146,18 +146,9 @@ const Product = ({ product }) => {
                   Out Of Stock
                 </span>
               )}
-              {/* {product.variant_groups[2] ? (
-                <span className="col-7">
-                  {product.variant_groups[2].name}
-                  <span className="text-danger">
-                    {product.variant_groups[2].options[0].name}
-                  </span>
-                </span>
-              ) : null} */}
             </div>
             <h2 className="text-uppercase">{product.name}</h2>
             <span className="fs-3 text-danger">
-              {/* {console.log(product.variant_groups[0])} */}
               {product.variant_groups[0]?.options[0]?.id == size
                 ? product.variant_groups[0].options[0].price.formatted_with_code
                 : product.variant_groups[0]?.options[1]?.id == size
@@ -470,7 +461,6 @@ const Product = ({ product }) => {
         </div>
       </div>
       <div className="container-fluid">
-        {/* {console.log(product)} */}
         {product.related_products.length > 0 ? (
           <>
             <h3 className="text-uppercase py-4 ps-lg-4 ps-2 fw-bold">

@@ -42,9 +42,6 @@ const termsandconditions = () => {
             terms and conditions. When you buy or book your order these terms
             and condition will apply on your each any every order.
           </span>
-          {/* <div className="text-center text-uppercase fw-bold fs-3 pt-5 pb-3">
-            <span>ESSENTIAL NUTRITION TO MEET YOUR NEEDS</span>
-          </div> */}
           <br></br>
           <span className="text-small text-secondary">
             Any product purchased from xtrack.pk online can be exchanged with in

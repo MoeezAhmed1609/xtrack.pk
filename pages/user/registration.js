@@ -28,20 +28,6 @@ const registration = () => {
             </Link>
           </span>
         </div>
-        {/* <div className="width-400 col py-2">
-          <button
-            type="button"
-            class="btn btn-dark"
-            style={{ width: '80%' }}
-            onClick={context.googleLoginHandler}
-          >
-            <span className="pe-2">
-              <AiOutlineGoogle />
-            </span>
-            <span className="text-small">Log in with Google</span>
-          </button>
-        </div> */}
-        {/* <span className="text-center text-tiny pt-2 col">OR</span> */}
         <div className="py-2 mt-3 col" style={{ width: '80%' }}>
           <form
             className="text-small text-start"

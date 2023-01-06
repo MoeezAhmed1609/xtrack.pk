@@ -28,7 +28,6 @@ function MyApp({ Component, pageProps }) {
   const messageStyle = ['text-tiny']
   const [message, setMessage] = useState('')
   const [type, setType] = useState(1) // 1 is success , 0 is error
-  // console.log(orderId)
 
   // cart state
 
@@ -106,8 +105,6 @@ function MyApp({ Component, pageProps }) {
         updateProfile(auth.currentUser, {
           displayName: f_name,
         })
-        // console.log(auth)
-        // return
         setMessage('Registration Successfull')
         setType(1)
         set(ref(database, 'users/' + f_name), {
@@ -123,26 +120,10 @@ function MyApp({ Component, pageProps }) {
         window.location = '/'
       })
       .catch((error) => {
-        console.log(error)
         setMessage(error.message)
         setType(0)
       })
   }
-  // console.log(auth)
-
-  // const googleLoginHandler = () => {
-  //   const provider = new GoogleAuthProvider()
-  //   signInWithRedirect(auth, provider)
-  //     .then((result) => {
-  //       setMessage('Login Successfull')
-  //       setType(1)
-  //       window.location = '/'
-  //     })
-  //     .catch((error) => {
-  //       setMessage(error.message)
-  //       setType(0)
-  //     })
-  // }
   const loginHandler = (event) => {
     event.preventDefault()
     const email = event.target.email.value
@@ -160,18 +141,6 @@ function MyApp({ Component, pageProps }) {
         setType(0)
       })
   }
-  // const dbRef = ref(database)
-  // get(child(dbRef, `users/${name}`))
-  //   .then((snapshot) => {
-  //     if (snapshot.exists()) {
-  //       setUser(snapshot.val())
-  //     } else {
-  //       console.log('No data available')
-  //     }
-  //   })
-  //   .catch((error) => {
-  //     console.error(error)
-  //   })
 
   const logOutHandler = () => {
     auth.signOut().then(() => (window.location = '/'))
@@ -233,18 +202,6 @@ function MyApp({ Component, pageProps }) {
     event.target.Zip.value = ''
     window.location = '/checkout/success'
   }
-  // console.log(auth.currentUser.displayName.toLowerCase())
-  // const fetchOrderDetails = () => {
-  //   const dbRef = ref(database)
-  //   get(child(dbRef, `orders/${auth.currentUser?.displayName?.toLowerCase()}`))
-  //     .then((snapshot) => {
-  //       setUserOrder(snapshot.val())
-  //     })
-  //     .catch((error) => {
-  //       console.error(error)
-  //     })
-  // }
-  // console.log(userOrder)
 
   const fetchProducts = async () => {
     await commerce.products.list({ limit: 150 }).then((data) => {
@@ -257,14 +214,6 @@ function MyApp({ Component, pageProps }) {
     
     setCategory(data)
   }
-
-  // var origArray = [0, 1, 2, 3, 4, 5]
-  // var cloneArray = origArray.slice()
-  // var i = 3
-
-  // cloneArray.splice(i, 1)
-
-  // console.log(cloneArray)
   useEffect(() => {
     import('bootstrap/dist/js/bootstrap')
     fetchProducts()

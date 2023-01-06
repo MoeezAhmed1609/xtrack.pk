@@ -12,25 +12,18 @@ import { v4 as uuid } from 'uuid'
 
 const dashboard = () => {
   const [userOrder, setUserOrder] = useState([])
-  // const [reviewNumber, setReviewNumber] = useState(1)
   const reviewNumber = uuid()
   const context = useContext(StateContext)
-  // const cart = useContext(CartStateContext)
   const auth = getAuth()
   const database = getDatabase()
-  // console.log(auth)
   const dbRef = ref(database)
-
-  // document.getElementsByClassName('dropdown-menu')
 
   const reviewSubmitHandler = (product_name) => {
     return event => {
     event.preventDefault()
-    console.log(event , product_name)
     const review = event.target.review.value
     const product = product_name
     const rating = event.target.rating.value
-    // setReviewNumber(reviewNumber + 1)
     set(ref(database, 'reviews/' + product + '/' + reviewNumber), {
       user: auth.currentUser.displayName,
       email: auth.currentUser.email,
@@ -43,7 +36,6 @@ const dashboard = () => {
     window.location.reload()
   }
   }
-  // console.log(auth.currentUser?.displayName.toLowerCase())
 
   useEffect(() => {
     get(child(dbRef, `orders/${auth.currentUser?.displayName?.toLowerCase()}`))
@@ -207,64 +199,6 @@ const dashboard = () => {
                                         />
                                       </div>
 
-                                      {/* <div className="row">
-                                        <ul className="rate-area mb-0">
-                                          <input
-                                            type="radio"
-                                            id="5-star"
-                                            name="rating"
-                                            defaultValue={5}
-                                          />
-                                          <label
-                                            htmlFor="5-star"
-                                            title="Amazing"
-                                          >
-                                            5 stars
-                                          </label>
-                                          <input
-                                            type="radio"
-                                            id="4-star"
-                                            name="rating"
-                                            defaultValue={4}
-                                          />
-                                          <label htmlFor="4-star" title="Good">
-                                            4 stars
-                                          </label>
-                                          <input
-                                            type="radio"
-                                            id="3-star"
-                                            name="rating"
-                                            defaultValue={3}
-                                          />
-                                          <label
-                                            htmlFor="3-star"
-                                            title="Average"
-                                          >
-                                            3 stars
-                                          </label>
-                                          <input
-                                            type="radio"
-                                            id="2-star"
-                                            name="rating"
-                                            defaultValue={2}
-                                          />
-                                          <label
-                                            htmlFor="2-star"
-                                            title="Not Good"
-                                          >
-                                            2 stars
-                                          </label>
-                                          <input
-                                            type="radio"
-                                            id="1-star"
-                                            name="rating"
-                                            defaultValue={1}
-                                          />
-                                          <label htmlFor="1-star" title="Bad">
-                                            1 star
-                                          </label>
-                                        </ul>
-                                      </div> */}
                                       <button
                                         type="submit"
                                         className="btn btn-danger btn-sm p-0 text-tiny"

@@ -102,14 +102,6 @@ const Navigation = ({ products }) => {
                                         multivitamins
                                       </Link>
                                     </li>
-                                    {/* <li className="p-3">
-                                      <Link
-                                        href="/categories/bcaa-eaa"
-                                        className="text-dark text-decoration-none"
-                                      >
-                                        BCAA & EAA
-                                      </Link>
-                                    </li> */}
                                   </ul>
                                 </div>
                               </li>
@@ -155,28 +147,8 @@ const Navigation = ({ products }) => {
                               className="text-dark text-decoration-none"
                             >
                               Accessories
-                              {/* <span className="ps-2 fs-6">&#8250;</span> */}
                             </Link>
                           </span>
-                          {/* <div className='nest-dropdown position-absolute bg-white rounded'>
-                    <ul className='nest-list text-small p-0 py-2'>
-                      <li className='p-3'>
-                        <a>
-                          Shakers
-                        </a>
-                      </li>
-                      <li className='p-3'>
-                        <a>
-                          Lifting belts
-                        </a>
-                      </li>
-                      <li className='p-3'>
-                        <a>
-                          Hand Wraps & grips
-                        </a>
-                      </li>
-                    </ul>
-                  </div> */}
                         </li>
                         <li className="supplement">
                           <span className="dropdown-item text-small py-3">

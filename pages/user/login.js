@@ -31,21 +31,6 @@ const login = () => {
             </Link>
           </span>
         </div>
-        {/* <div className="width-400 col py-2">
-          <button
-            type="button"
-            className="btn btn-dark"
-            style={{ width: '80%' }}
-          >
-            <span className="pe-2">
-              <AiOutlineGoogle />
-            </span>
-            <span className="text-small" onClick={context.googleLoginHandler}>
-              Log in with Google
-            </span>
-          </button>
-        </div> */}
-        {/* <span className="text-center text-tiny py-2 col">OR</span> */}
         <div className="py-2 col mt-3" style={{ width: '80%' }}>
           <form className="text-small text-start" onSubmit={context.loginHandler}>
             <div className="mb-3">
