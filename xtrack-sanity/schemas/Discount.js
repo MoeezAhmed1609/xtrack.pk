@@ -11,7 +11,12 @@ export default {
         name : 'discount',
         title: 'Discount',
         type:'string'
+      } ,{
+        name : 'percentage',
+        title: 'Percentage',
+        type:'number'
       }
+
     ],
   }
   

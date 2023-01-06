@@ -8,6 +8,7 @@ const NewsProducts = ({ products , discount }) => {
       offerP.push(product)
     }
   })
+  // console.log(discount)
   return (
     <div className="">
       <div className="container-fluid text-center mb-4 p-0">

@@ -47,7 +47,7 @@ export default function Home({ products }) {
       </Head>
       <Delievery />
       <Carousel banner={banner} />
-      {/* <OfferProducts products={products} discount={discount} /> */}
+      <OfferProducts products={products} discount={discount} />
       <Stacks products={products} />
       <Categories categories={context.category} products={products} />
       <Companies categories={context.category} />
