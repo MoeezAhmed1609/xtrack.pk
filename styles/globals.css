@@ -65,7 +65,7 @@ html{
 /* Nav droddown nest */
 
 .nest-dropdown{
-  display: none;
+  display: block;
   position: absolute;
   top: 0px;
   left: 155px;
@@ -77,6 +77,14 @@ html{
   top: 0px;
   left: 178px;
   width: 180px
+}
+@media screen and (min-width : 1440px) {
+  .nest-dropdown{
+    left: 145px;
+  }
+  .nest-dropdownet{
+    left: 170px
+  }
 }
 .nest-list{
   list-style: none;
