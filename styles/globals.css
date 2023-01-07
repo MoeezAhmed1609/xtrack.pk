@@ -68,14 +68,14 @@ html{
   display: none;
   position: absolute;
   top: 0px;
-  left: 160px;
+  left: 155px;
   width: 180px
 }
 .nest-dropdownet{
   display: none;
   position: absolute;
   top: 0px;
-  left: 182px;
+  left: 178px;
   width: 180px
 }
 .nest-list{
@@ -292,6 +292,11 @@ html{
  .product-tag-box{
   height: 350px;
   position: relative;
+ }
+ @media screen and (max-width: 430px) {
+    .product-tag-box{
+      height: 130px;
+    }
  }
 
  .product-tag-box a {
