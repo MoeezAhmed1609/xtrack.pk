@@ -210,7 +210,7 @@ html{
 }
 @media screen and (max-width: 430px) {
   .carousel-body{
-    height: 30vh;
+    height: 26vh;
   }
 }
 .banner-img{
