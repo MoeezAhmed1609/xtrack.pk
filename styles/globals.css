@@ -65,7 +65,7 @@ html{
 /* Nav droddown nest */
 
 .nest-dropdown{
-  display: block;
+  display: none;
   position: absolute;
   top: 0px;
   left: 155px;
