@@ -29,21 +29,21 @@ const Footer = () => {
                 <AiOutlineMail />
               </span>
               <span className="text-tiny">
-                Email support : xtrack.pk@gmail.com
+                Email support : <span className='text-lowercase'>xtrack.pk@gmail.com</span>
               </span>
             </div>
             <div className="col-lg-3 col-md-6 col-12 text-white text-uppercase">
               <span className="fs-5 p-2 rounded-circle">
                 <AiOutlinePhone />
               </span>
-              <span className="text-tiny">Phone support : +923123456789</span>
+              <span className="text-tiny">Phone support : +923272026242</span>
             </div>
             <div className="col-lg-3 col-md-6 col-12 text-white text-uppercase">
               <span className="fs-5 p-2 rounded-circle">
                 <AiOutlineWhatsApp />
               </span>
               <span className="text-tiny">
-                WhatsApp support : +923123456789
+                WhatsApp support : +923272026242
               </span>
             </div>
           </div>
@@ -70,22 +70,6 @@ const Footer = () => {
                     className="text-small text-decoration-none text-white"
                   >
                     Terms & Conditions
-                  </Link>
-                </li>
-                <li className="list-group-item bg-transparent border-0 py-0">
-                  <Link
-                    href="/docs/return-and-refund"
-                    className="text-small text-decoration-none text-white"
-                  >
-                    Return & Refund
-                  </Link>
-                </li>
-                <li className="list-group-item bg-transparent border-0 py-0">
-                  <Link
-                    href="/docs/delivery-information"
-                    className="text-small text-decoration-none text-white"
-                  >
-                    Delievery Information
                   </Link>
                 </li>
                 <li className="list-group-item bg-transparent border-0 py-0">

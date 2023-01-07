@@ -19,22 +19,24 @@ const dashboard = () => {
   const dbRef = ref(database)
 
   const reviewSubmitHandler = (product_name) => {
-    return event => {
-    event.preventDefault()
-    const review = event.target.review.value
-    const product = product_name
-    const rating = event.target.rating.value
-    set(ref(database, 'reviews/' + product + '/' + reviewNumber), {
-      user: auth.currentUser.displayName,
-      email: auth.currentUser.email,
-      quantity: reviewNumber,
-      product: product,
-      review: review,
-      rating: rating,
-    })
-    alert('Thanks for Review!')
-    window.location.reload()
-  }
+    return (event) => {
+      event.preventDefault()
+      const date = new Date();
+      const review = event.target.review.value
+      const product = product_name
+      const rating = event.target.rating.value
+      set(ref(database, 'reviews/' + product + '/' + reviewNumber), {
+        date : date,
+        user: auth.currentUser.displayName,
+        email: auth.currentUser.email,
+        quantity: reviewNumber,
+        product: product,
+        review: review,
+        rating: rating,
+      })
+      alert('Thanks for Review!')
+      window.location.reload()
+    }
   }
 
   useEffect(() => {
@@ -164,7 +166,9 @@ const dashboard = () => {
                                     </button>
                                     <form
                                       className="dropdown-menu review-panel py-0"
-                                      onSubmit={reviewSubmitHandler(product.product_name)}
+                                      onSubmit={reviewSubmitHandler(
+                                        product.product_name,
+                                      )}
                                     >
                                       <div className="form-floating bg-white">
                                         <textarea
@@ -193,7 +197,7 @@ const dashboard = () => {
                                           className="form-control"
                                           id="autoSizingInput"
                                           placeholder="5 stars"
-                                          name='rating'
+                                          name="rating"
                                           min="1"
                                           max="5"
                                         />
@@ -208,7 +212,11 @@ const dashboard = () => {
                                       </button>
                                     </form>
                                   </div>
-                                  <img src={product.image?.url} height="70px" alt={product.product_name} />
+                                  <img
+                                    src={product.image?.url}
+                                    height="70px"
+                                    alt={product.product_name}
+                                  />
                                   <span className="text-small d-none d-sm-block">
                                     {product.product_name}
                                   </span>
@@ -244,9 +252,11 @@ const dashboard = () => {
                   ) : (
                     <div className="container d-flex flex-column justify-content-center align-items-center">
                       <span className="fs-5">No orders yet!</span>
-                      <button type="button" className="btn btn-danger mt-3">
-                        Go to Shop
-                      </button>
+                      <Link href='/' className='text-decoration-none text-white'>
+                        <button type="button" className="btn btn-danger mt-3">
+                          Go to Shop
+                        </button>
+                      </Link>
                     </div>
                   )}
                 </div>

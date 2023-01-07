@@ -35,11 +35,18 @@ const Categories = ({ products, categories, slug, setSlug }) => {
       healthSlug.push(category)
     }
   })
+  const accessoriesSlug = []
+  categories.map((category) => {
+    if (category.slug == 'accessories') {
+      accessoriesSlug.push(category)
+    }
+  })
 
   const proteinP = []
   const gainerP = []
   const workoutP = []
   const healthP = []
+  const accessoriesP = []
   const brands = []
   products?.map((product) => {
     if (product.categories[0]?.slug == 'proteins') {
@@ -59,6 +66,11 @@ const Categories = ({ products, categories, slug, setSlug }) => {
   products?.map((product) => {
     if (product.categories[0]?.slug == 'fat-loss-products') {
       healthP.push(product)
+    }
+  })
+  products?.map((product) => {
+    if (product.categories[0]?.slug == 'accessories') {
+      accessoriesP.push(product)
     }
   })
   categories?.map((cat) => {
@@ -153,11 +165,11 @@ const Categories = ({ products, categories, slug, setSlug }) => {
             products={healthP}
             categories={healthSlug}
           />
-          {/* <Category
+          <Category
             title="Accessories"
             products={accessoriesP}
             categories={accessoriesSlug}
-          /> */}
+          />
         </div>
       </div>
     </div>

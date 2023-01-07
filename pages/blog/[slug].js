@@ -4,11 +4,12 @@ import BlockContent from '@sanity/block-content-to-react'
 import Image from 'next/image'
 
 const Posts = ({ post }) => {
+  console.log(post)
   return (
     <>
       <div className="container-fluid py-4 post-box">
         <div className="post-img-box">
-          <Image className="post-img" src={urlFor(post.coverimage?.asset._ref)} alt={post.title} />
+          <img className="post-img" src={urlFor(post.coverimage?.asset._ref)} alt={post.title} />
         </div>
         <div className="container text-center pt-5">
           <h3 className="text-uppercase fw-bold">{post.title}</h3>
@@ -19,6 +20,7 @@ const Posts = ({ post }) => {
           projectId="ke3vv5hk"
           dataset={'production'}
           blocks={post.content}
+          className='text-secondary'
         />
       </div>
     </>

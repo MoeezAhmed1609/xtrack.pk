@@ -54,12 +54,22 @@ const OffCanvas = () => {
         </div>
         <div className="offcanvas-body text-center">
           <ul className="navbar-nav text-uppercase text-small text-white">
-            <li className="nav-item">
+            <li className="nav-item" data-bs-dismiss="offcanvas">
               <Link className="nav-link active" aria-current="page" href="/">
                 Home
               </Link>
             </li>
-            <li className="nav-item">
+            <li className="nav-item pt-2" data-bs-dismiss="offcanvas">
+              <Link className="nav-link border-top border-danger" href="/connect">
+                Connect with us
+              </Link>
+            </li>
+            <li className="nav-item pt-2" data-bs-dismiss="offcanvas">
+              <Link className="nav-link border-top border-danger" href="/blog">
+                Blogs
+              </Link>
+            </li>
+            <li className="nav-item" >
               <span className="nav-link border-bottom border-danger">
                 Categories
               </span>
@@ -70,32 +80,32 @@ const OffCanvas = () => {
                     Supplements<span className="fs-5 ps-2">&#8964;</span>
                   </span>
                   <ul className="offcanvas-list text-start p-0 ps-3 py-2">
-                    <li>
+                    <li data-bs-dismiss="offcanvas">
                       <Link className="nav-link py-2" href="/categories/proteins">
                         Proteins
                       </Link>
                     </li>
-                    <li>
+                    <li data-bs-dismiss="offcanvas">
                       <Link className="nav-link py-2" href="/categories/weight-gainers">
                         Weight gainers
                       </Link>
                     </li>
-                    <li>
+                    <li data-bs-dismiss="offcanvas">
                       <Link className="nav-link py-2" href="/categories/fat-loss-products">
                         fat loss products
                       </Link>
                     </li>
-                    <li>
+                    <li data-bs-dismiss="offcanvas">
                       <Link className="nav-link py-2" href="/categories/pre-workouts">
                         Pre-workout
                       </Link>
                     </li>
-                    <li>
+                    <li data-bs-dismiss="offcanvas">
                       <Link className="nav-link py-2" href="/categories/bcaa-eaa">
                         BCAA & EAA
                       </Link>
                     </li>
-                    <li>
+                    <li data-bs-dismiss="offcanvas">
                       <Link className="nav-link py-2" href="/categories/creatine">
                         Creatine
                       </Link>
@@ -105,22 +115,22 @@ const OffCanvas = () => {
                         General Health<span className="fs-5 ps-2">&#8964;</span>
                       </span>
                       <ul className="offcanvas-list text-start p-0 ps-3 py-2">
-                        <li>
+                        <li data-bs-dismiss="offcanvas">
                           <Link className="nav-link py-2" href="/categories/testosterone-boosters">
                             testosterone boosters
                           </Link>
                         </li>
-                        <li>
+                        <li data-bs-dismiss="offcanvas">
                           <Link className="nav-link py-2" href="/categories/fish-oil">
                             fish oil
                           </Link>
                         </li>
-                        <li>
+                        <li data-bs-dismiss="offcanvas">
                           <Link className="nav-link py-2" href="/categories/zma">
                             ZMA
                           </Link>
                         </li>
-                        <li>
+                        <li data-bs-dismiss="offcanvas">
                           <Link className="nav-link py-2" href="/categories/multivitamins">
                             multivitamins
                           </Link>
@@ -129,7 +139,7 @@ const OffCanvas = () => {
                     </li>
                   </ul>
                 </li>
-                <li className="py-2">
+                <li className="py-2" data-bs-dismiss="offcanvas">
                   <Link href="/categories/accessories" className="text-decoration-none text-white">
                     Accessories
                   </Link>
@@ -139,32 +149,32 @@ const OffCanvas = () => {
                     Gym Wear<span className="fs-5 ps-2">&#8964;</span>
                   </span>
                   <ul className="offcanvas-list text-start p-0 ps-3 py-2">
-                    <li>
+                    <li data-bs-dismiss="offcanvas">
                       <Link className="nav-link py-2" href="/categories/bottoms">
                         Bottoms
                       </Link>
                     </li>
-                    <li>
+                    <li data-bs-dismiss="offcanvas">
                       <Link className="nav-link py-2" href="/categories/tops">
                         Tops
                       </Link>
                     </li>
-                    <li>
+                    <li data-bs-dismiss="offcanvas">
                       <Link className="nav-link py-2" href="/categories/tank-tops">
                         Tank Tops
                       </Link>
                     </li>
-                    <li>
+                    <li data-bs-dismiss="offcanvas">
                       <Link className="nav-link py-2" href="/categories/shorts">
                         Shorts
                       </Link>
                     </li>
-                    <li>
+                    <li data-bs-dismiss="offcanvas">
                       <Link className="nav-link py-2" href="/categories/yoga-pants">
                         Yoga Pants
                       </Link>
                     </li>
-                    <li>
+                    <li data-bs-dismiss="offcanvas">
                       <Link className="nav-link py-2" href="/categories/track-suits">
                         Track Suits
                       </Link>
@@ -172,16 +182,6 @@ const OffCanvas = () => {
                   </ul>
                 </li>
               </ul>
-            </li>
-            <li className="nav-item pt-2">
-              <Link className="nav-link border-top border-danger" href="/connect">
-                Connect with us
-              </Link>
-            </li>
-            <li className="nav-item pt-2">
-              <Link className="nav-link border-top border-danger" href="/blog">
-                Blogs
-              </Link>
             </li>
           </ul>
         </div>

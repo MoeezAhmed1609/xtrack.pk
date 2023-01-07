@@ -43,6 +43,9 @@ function MyApp({ Component, pageProps }) {
     })
   }
   const addSingleVariantToCart = async (id, quantity, group, variant) => {
+    if (group == '' || variant == '') {
+      alert('Please select a variant')
+    }
     await commerce.cart
       .add(id, quantity, {
         [group]: variant,
@@ -60,6 +63,10 @@ function MyApp({ Component, pageProps }) {
     variant1,
     variant2,
   ) => {
+    if (group1 == '' || variant1 == '' || group2 == '' || variant2 == '') {
+      alert('Please select a variant')
+      return
+    }
     await commerce.cart
       .add(id, quantity, {
         [group1]: variant1,
@@ -150,6 +157,11 @@ function MyApp({ Component, pageProps }) {
   const [payment, setPayment] = useState('')
   const billingDataHandler = async (event) => {
     event.preventDefault()
+    if (payment == '') {
+      alert('Please select a payment method!')
+      return
+    }
+    const date = new Date()
     const f_name = event.target.f_name.value
     const s_name = event.target.s_name.value
     const phone = event.target.phone.value
@@ -158,33 +170,39 @@ function MyApp({ Component, pageProps }) {
     const state = event.target.state.value
     const address = event.target.Address.value
     const zip = event.target.Zip.value
+    let variants = []
+    token?.line_items.map((item) => item.selected_options?.map((variant) => variants.push(variant.option_name)))
+
+    const orderData = token?.line_items.map((item) => ({
+      name: item.product_name,
+      quantity: item.quantity,
+      price: item.line_total.formatted_with_code,
+      variants: variants,
+    }))
 
     await set(
-      ref(
-        database,
-        'orders/' + f_name.toLowerCase() + '/' + token?.line_items[0].permalink,
-      ),
+      ref(database, 'orders/' + f_name.toLowerCase() + '/' + token?.id),
       {
+        date: date,
+        products: orderData,
         f_name: f_name,
         s_name: s_name,
         phone: phone,
         email: email,
-        country: country,
         state: state,
         address: address,
         payment: payment,
         zip: zip,
-        products: token?.line_items,
       },
     )
 
     await commerce.cart.refresh().then((cart) => setCart(cart))
     const params = {
-      f_name: f_name,
-      s_name: s_name,
+      fname: f_name,
+      sname: s_name,
       phone: phone,
       email: email,
-      address: address,
+      address: address
     }
     await emailjs.send(
       'service_2ceha86',
@@ -211,7 +229,7 @@ function MyApp({ Component, pageProps }) {
 
   const fetchCategories = async () => {
     const { data } = await commerce.categories.list()
-    
+
     setCategory(data)
   }
   useEffect(() => {
@@ -255,7 +273,7 @@ function MyApp({ Component, pageProps }) {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <title>Xtrack GYM Store</title>
         </Head>
-        <header>
+        <header className="mb-5">
           <Navigation products={products} />
         </header>
         <Component {...pageProps} />

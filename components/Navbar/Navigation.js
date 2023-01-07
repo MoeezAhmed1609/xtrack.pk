@@ -11,7 +11,7 @@ import track from '../../assets/track-2.png'
 const Navigation = ({ products }) => {
   return (
     <>
-      <div className="container-fluid bg-dark">
+      <div className="container-fluid bg-dark fixed-top">
         <div className="row ">
           <div className="col-1 d-lg-none p-0">
             <OffCanvas />

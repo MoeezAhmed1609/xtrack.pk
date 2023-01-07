@@ -43,6 +43,7 @@ const Product = ({ product }) => {
   const getVariantSize = (id, variantId) => {
     setSizeId(id)
     setSize(variantId)
+    console.log(sizeId, size)
   }
   const getVariantFlavour = (id, variantId) => {
     setFlavourId(id)
@@ -105,7 +106,7 @@ const Product = ({ product }) => {
                   modules={[Navigation]}
                   className="mySwiper swiper-product"
                   slidesPerView={1}
-                  style={{ height: '60vh', width: '50vw' }}
+                  style={{ height: '60vh' }}
                 >
                   {product.assets.map((asset) => (
                     <>
@@ -128,14 +129,12 @@ const Product = ({ product }) => {
                 src={product.assets[0].url}
                 alt={product.name}
                 className="cursor-p"
-                style={{ height: '420px' }}
+                style={{ height: '65vh' }}
                 onClick={() => openInNewTab(product.assets[0].url)}
               />
             )}
           </div>
-          <div
-            className="col-lg-6 col-12 d-flex flex-column pt-4 ps-lg-2 ps-5"
-          >
+          <div className="col-lg-6 col-12 d-flex flex-column pt-4 ps-lg-2 ps-5">
             <div className="row text-small">
               {product.inventory.available > 0 ? (
                 <span className="text-danger text-uppercase col ps-2">
@@ -181,23 +180,28 @@ const Product = ({ product }) => {
             <div className="d-flex flex-column">
               <div className="py-2">
                 <span className="ps-2">{product.variant_groups[0]?.name}</span>
-                {product.variant_groups?.length
+                {product.variant_groups
                   ? product.variant_groups[0].options.map((option) => {
                       return (
                         <>
-                          <button
-                            key={option.id}
-                            className="btn btn-sm btn-outline-danger mx-lg-2 mx-md-1 ms-1"
-                            data-bs-toggle="button"
-                            onClick={() =>
+                          <div
+                            onChange={(e) =>
                               getVariantSize(
                                 product.variant_groups[0].id,
-                                option.id,
+                                e.target.value,
                               )
                             }
                           >
-                            {option.name}
-                          </button>
+                            <label className="fs-6 ps-2 check-label">
+                              <input
+                                type="radio"
+                                required
+                                name="size_option"
+                                value={option.id}
+                              />
+                              <i>{option.name}</i>
+                            </label>
+                          </div>
                         </>
                       )
                     })
@@ -205,23 +209,28 @@ const Product = ({ product }) => {
               </div>
               <div className="col py-2">
                 <span className="ps-2">{product.variant_groups[1]?.name}</span>
-                {product.variant_groups?.length
+                {product.variant_groups
                   ? product.variant_groups[1]?.options.map((option) => {
                       return (
                         <>
-                          <button
-                            key={option.id}
-                            className="btn btn-sm btn-outline-danger mx-lg-2 mx-md-1 ms-1 mb-2"
-                            data-bs-toggle="button"
-                            onClick={() =>
+                          <div
+                            onChange={(e) =>
                               getVariantFlavour(
                                 product.variant_groups[1].id,
-                                option.id,
+                                e.target.value,
                               )
                             }
                           >
-                            {option.name}
-                          </button>
+                            <label className="fs-6 ps-2 check-label">
+                              <input
+                                type="radio"
+                                required
+                                name="flavor_option"
+                                value={option.id}
+                              />
+                              <i>{option.name}</i>
+                            </label>
+                          </div>
                         </>
                       )
                     })

@@ -35,6 +35,7 @@ const Card = ({ product, discount }) => {
             src={product.image.url}
             className="card-img-top mx-auto mt-2"
             alt="Card Image"
+            style={{minHeight : '190px' , maxHeight : '192px'}}
           />
         </Link>
         <div className="card-body">

@@ -66,15 +66,6 @@ const CategoryList = ({ slug }) => {
                       </span>
                     </div>
                     <hr className="bg-white mt-1 mb-0" />
-                    <div className="container d-flex justify-content-center align-items-center py-2">
-                      <span>
-                        <AiOutlineStar />
-                        <AiOutlineStar />
-                        <AiOutlineStar />
-                        <AiOutlineStar />
-                        <AiOutlineStar />
-                      </span>
-                    </div>
                     <div className="row align-items-center text-center">
                       <span className="col-12 p-0">
                         <span className="fs-6 ps-2 fw-bold">
