@@ -17,8 +17,7 @@ import {
 } from 'firebase/auth'
 import { getDatabase, ref, set, child, get } from 'firebase/database'
 import { Navigation, Footer } from '../components/index'
-import { v4 as uuidv4 } from 'uuid'
-import sendgrid from '@sendgrid/mail'
+import { client } from '../lib/client'
 
 function MyApp({ Component, pageProps }) {
   const [token, setToken] = useState(null)
@@ -29,6 +28,7 @@ function MyApp({ Component, pageProps }) {
   const messageStyle = ['text-tiny']
   const [message, setMessage] = useState('')
   const [type, setType] = useState(1) // 1 is success , 0 is error
+  const [title, setTitle] = useState('')
 
   // cart state
 
@@ -216,17 +216,22 @@ function MyApp({ Component, pageProps }) {
               <th>Price</th>
             </tr>
               <tr>
-                <td>${token.line_items[0]?.product_name} ${token.line_items[0]?.selected_options[0]?.option_name} ${token.line_items[0]?.selected_options[1]?.option_name}</td>
+                <td>${token.line_items[0]?.product_name} ${
+        token.line_items[0]?.selected_options[0]?.option_name
+      } ${token.line_items[0]?.selected_options[1]?.option_name}</td>
                 <td>${token.line_items[0]?.quantity}</td>
                 <td>${token.line_items[0]?.price.formatted_with_code}</td>
               </tr>
               <tr>
-                <td>${token.line_items[1]?.product_name} ${token.line_items[1]?.selected_options[0]?.option_name} ${token.line_items[1]?.selected_options[1]?.option_name}</td>
+                <td>${token.line_items[1]?.product_name} ${
+        token.line_items[1]?.selected_options[0]?.option_name
+      } ${token.line_items[1]?.selected_options[1]?.option_name}</td>
                 <td>${token.line_items[1]?.quantity}</td>
                 <td>${token.line_items[1]?.price.formatted_with_code}</td>
               </tr>
               ${
-                token.line_items[2] ? (`
+                token.line_items[2]
+                  ? `
                   <tr>
                     <td>
                       ${token.line_items[2]?.product_name} 
@@ -236,11 +241,13 @@ function MyApp({ Component, pageProps }) {
                     <td>${token.line_items[2]?.quantity}</td>
                     <td>${token.line_items[2]?.price.formatted_with_code}</td>
                   </tr>
-                `) : null
+                `
+                  : null
               }
               
               ${
-                token.line_items[3] ? (`
+                token.line_items[3]
+                  ? `
                   <tr>
                     <td>
                       ${token.line_items[3]?.product_name} 
@@ -250,10 +257,12 @@ function MyApp({ Component, pageProps }) {
                     <td>${token.line_items[3]?.quantity}</td>
                     <td>${token.line_items[3]?.price.formatted_with_code}</td>
                   </tr>
-                `) : null
+                `
+                  : null
               }
               ${
-                token.line_items[4] ? (`
+                token.line_items[4]
+                  ? `
                   <tr>
                     <td>
                       ${token.line_items[4]?.product_name} 
@@ -263,10 +272,12 @@ function MyApp({ Component, pageProps }) {
                     <td>${token.line_items[4]?.quantity}</td>
                     <td>${token.line_items[4]?.price.formatted_with_code}</td>
                   </tr>
-                `) : null
+                `
+                  : null
               }
               ${
-                token.line_items[5] ? (`
+                token.line_items[5]
+                  ? `
                   <tr>
                     <td>
                       ${token.line_items[5]?.product_name} 
@@ -276,10 +287,12 @@ function MyApp({ Component, pageProps }) {
                     <td>${token.line_items[5]?.quantity}</td>
                     <td>${token.line_items[5]?.price.formatted_with_code}</td>
                   </tr>
-                `) : null
+                `
+                  : null
               }
               ${
-                token.line_items[6] ? (`
+                token.line_items[6]
+                  ? `
                   <tr>
                     <td>
                       ${token.line_items[6]?.product_name} 
@@ -289,10 +302,12 @@ function MyApp({ Component, pageProps }) {
                     <td>${token.line_items[6]?.quantity}</td>
                     <td>${token.line_items[6]?.price.formatted_with_code}</td>
                   </tr>
-                `) : null
+                `
+                  : null
               }
               ${
-                token.line_items[8] ? (`
+                token.line_items[8]
+                  ? `
                   <tr>
                     <td>
                       ${token.line_items[8]?.product_name} 
@@ -302,10 +317,12 @@ function MyApp({ Component, pageProps }) {
                     <td>${token.line_items[8]?.quantity}</td>
                     <td>${token.line_items[8]?.price.formatted_with_code}</td>
                   </tr>
-                `) : null
+                `
+                  : null
               }
               ${
-                token.line_items[9] ? (`
+                token.line_items[9]
+                  ? `
                   <tr>
                     <td>
                       ${token.line_items[9]?.product_name} 
@@ -315,7 +332,8 @@ function MyApp({ Component, pageProps }) {
                     <td>${token.line_items[9]?.quantity}</td>
                     <td>${token.line_items[9]?.price.formatted_with_code}</td>
                   </tr>
-                `) : null
+                `
+                  : null
               }
           </table>
     </div>
@@ -353,6 +371,12 @@ function MyApp({ Component, pageProps }) {
     fetchProducts()
     fetchCategories()
     fetchCart()
+    client
+      .fetch(`*[_type == 'webtitle']`)
+      .then((data) => {
+        setTitle(data)
+      })
+      .catch(console.error)
   }, [])
   return (
     <CartStateContext.Provider
@@ -387,7 +411,9 @@ function MyApp({ Component, pageProps }) {
       >
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <title>Xtrack GYM Store</title>
+          <meta name="description" content={title[0]?.description} />
+          <title>{title[0]?.title}</title>
+          <link rel="icon" href="/xtrack.ico" />
         </Head>
         <header className="mb-5">
           <Navigation products={products} />
