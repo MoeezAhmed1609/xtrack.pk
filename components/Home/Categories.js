@@ -9,34 +9,34 @@ import 'swiper/css/navigation'
 const Categories = ({ products, categories, slug, setSlug }) => {
   const proteinSlug = []
 
-  categories.map((category) => {
+  categories?.map((category) => {
     if (category.slug == 'proteins') {
       proteinSlug.push(category)
     }
   })
   const gainerSlug = []
 
-  categories.map((category) => {
+  categories?.map((category) => {
     if (category.slug == 'weight-gainers') {
       gainerSlug.push(category)
     }
   })
   const aminosSlug = []
 
-  categories.map((category) => {
+  categories?.map((category) => {
     if (category.slug == 'bcaa-eaa' || category.slug == 'pre-workouts') {
       aminosSlug.push(category)
     }
   })
   const healthSlug = []
 
-  categories.map((category) => {
+  categories?.map((category) => {
     if (category.slug == 'multivitamins') {
       healthSlug.push(category)
     }
   })
   const accessoriesSlug = []
-  categories.map((category) => {
+  categories?.map((category) => {
     if (category.slug == 'accessories') {
       accessoriesSlug.push(category)
     }
