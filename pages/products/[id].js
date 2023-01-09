@@ -40,6 +40,8 @@ const Product = ({ product }) => {
   const [usage, setUsage] = useState('')
   const [reviews, setReviews] = useState([])
 
+  const disableBtn = size == '' || flavour == '' ? 'cursor-d' : null;
+
   const getVariantSize = (id, variantId) => {
     setSizeId(id)
     setSize(variantId)
@@ -265,7 +267,7 @@ const Product = ({ product }) => {
                   product.variant_groups.length > 1 ? (
                     <button
                       type="button"
-                      className="btn btn-danger text-uppercase"
+                      className={`btn btn-danger text-uppercase ${disableBtn}`}
                       style={{ width: '80%' }}
                       onClick={() =>
                         context.addMultiVariantToCart(
@@ -283,7 +285,7 @@ const Product = ({ product }) => {
                   ) : product.variant_groups.length > 0 ? (
                     <button
                       type="button"
-                      className="btn btn-danger text-uppercase"
+                      className={`btn btn-danger text-uppercase ${disableBtn}`}
                       style={{ width: '80%' }}
                       onClick={() =>
                         context.addSingleVariantToCart(

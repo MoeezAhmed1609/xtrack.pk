@@ -41,7 +41,7 @@ const Search = ({ products }) => {
             </div>
           ) : (
             products.data
-              .filter((product) => product.name.includes(query))
+              .filter((product) => product.name.toLowerCase().includes(query.toLowerCase()))
               .map((product) => (
                 <Link
                   href={`/products/${product.id}`}

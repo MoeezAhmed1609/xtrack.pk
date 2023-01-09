@@ -218,7 +218,7 @@ html{
 }
 @media screen and (max-width: 430px) {
   .carousel-body{
-    height: 24vh;
+    height: 26vh;
   }
 }
 .banner-img{
@@ -240,8 +240,8 @@ html{
   width: 94%;
 }
 .card-img-top{
-  height: auto!important;
-  width: 60%!important;
+  height: 170px!important;
+  width: auto!important;
   object-fit: cover;
   object-position: center center;
   vertical-align: middle;
@@ -564,6 +564,11 @@ html{
   background-size: cover;
   background-position: center;
 }
+@media screen and (max-width: 430px) {
+  .connect-box{
+    background-position: right center;
+  }
+}
 
 .connect-box div{
   /* width : 100%; */
@@ -572,37 +577,13 @@ html{
   justify-content: center;
   align-items: center;
 }
-/* .c-supplement{
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../assets/supplement-box.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  transition: .4s;
-} */
 .c-supplement:hover{
   opacity: 75%;
 }
 
-/* .c-accessories{
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../assets/accessories-box.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  transition: .4s;
-} */
 .c-accessories:hover{
   opacity: 75%;
 }
-/* .c-wear{
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../assets/supplement-box.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  transition: .4s;
-} */
 .c-wear:hover{
   opacity: 75%;
 }
@@ -652,4 +633,8 @@ html{
 }
 .content figure img {
   width: 60%;
+}
+
+.cursor-d{
+  cursor: not-allowed !important;
 }

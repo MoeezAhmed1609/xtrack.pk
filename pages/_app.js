@@ -18,6 +18,7 @@ import {
 import { getDatabase, ref, set, child, get } from 'firebase/database'
 import { Navigation, Footer } from '../components/index'
 import { v4 as uuidv4 } from 'uuid'
+import sendgrid from '@sendgrid/mail'
 
 function MyApp({ Component, pageProps }) {
   const [token, setToken] = useState(null)
@@ -39,7 +40,7 @@ function MyApp({ Component, pageProps }) {
   const addToCart = async (id, quantity) => {
     await commerce.cart.add(id, quantity).then((cart) => {
       setCart(cart)
-      window.location = '/cart'
+      // window.location = '/cart'
     })
   }
   const addSingleVariantToCart = async (id, quantity, group, variant) => {
@@ -152,7 +153,7 @@ function MyApp({ Component, pageProps }) {
   const logOutHandler = () => {
     auth.signOut().then(() => (window.location = '/'))
   }
-
+  // console.log(token)
   //  Billing details to firebase database
   const [payment, setPayment] = useState('')
   const billingDataHandler = async (event) => {
@@ -171,7 +172,11 @@ function MyApp({ Component, pageProps }) {
     const address = event.target.Address.value
     const zip = event.target.Zip.value
     let variants = []
-    token?.line_items.map((item) => item.selected_options?.map((variant) => variants.push(variant.option_name)))
+    token?.line_items.map((item) =>
+      item.selected_options?.map((variant) =>
+        variants.push(variant.option_name),
+      ),
+    )
 
     const orderData = token?.line_items.map((item) => ({
       name: item.product_name,
@@ -195,14 +200,126 @@ function MyApp({ Component, pageProps }) {
         zip: zip,
       },
     )
-
     await commerce.cart.refresh().then((cart) => setCart(cart))
     const params = {
       fname: f_name,
       sname: s_name,
       phone: phone,
       email: email,
-      address: address
+      address: address,
+      orderhtml: `
+      <div>
+          <table>
+            <tr>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Price</th>
+            </tr>
+              <tr>
+                <td>${token.line_items[0]?.product_name} ${token.line_items[0]?.selected_options[0]?.option_name} ${token.line_items[0]?.selected_options[1]?.option_name}</td>
+                <td>${token.line_items[0]?.quantity}</td>
+                <td>${token.line_items[0]?.price.formatted_with_code}</td>
+              </tr>
+              <tr>
+                <td>${token.line_items[1]?.product_name} ${token.line_items[1]?.selected_options[0]?.option_name} ${token.line_items[1]?.selected_options[1]?.option_name}</td>
+                <td>${token.line_items[1]?.quantity}</td>
+                <td>${token.line_items[1]?.price.formatted_with_code}</td>
+              </tr>
+              ${
+                token.line_items[2] ? (`
+                  <tr>
+                    <td>
+                      ${token.line_items[2]?.product_name} 
+                      ${token.line_items[2]?.selected_options[0]?.option_name}
+                      ${token.line_items[2]?.selected_options[1]?.option_name}
+                    </td>
+                    <td>${token.line_items[2]?.quantity}</td>
+                    <td>${token.line_items[2]?.price.formatted_with_code}</td>
+                  </tr>
+                `) : null
+              }
+              
+              ${
+                token.line_items[3] ? (`
+                  <tr>
+                    <td>
+                      ${token.line_items[3]?.product_name} 
+                      ${token.line_items[3]?.selected_options[0]?.option_name}
+                      ${token.line_items[3]?.selected_options[1]?.option_name}
+                    </td>
+                    <td>${token.line_items[3]?.quantity}</td>
+                    <td>${token.line_items[3]?.price.formatted_with_code}</td>
+                  </tr>
+                `) : null
+              }
+              ${
+                token.line_items[4] ? (`
+                  <tr>
+                    <td>
+                      ${token.line_items[4]?.product_name} 
+                      ${token.line_items[4]?.selected_options[0]?.option_name}
+                      ${token.line_items[4]?.selected_options[1]?.option_name}
+                    </td>
+                    <td>${token.line_items[4]?.quantity}</td>
+                    <td>${token.line_items[4]?.price.formatted_with_code}</td>
+                  </tr>
+                `) : null
+              }
+              ${
+                token.line_items[5] ? (`
+                  <tr>
+                    <td>
+                      ${token.line_items[5]?.product_name} 
+                      ${token.line_items[5]?.selected_options[0]?.option_name}
+                      ${token.line_items[5]?.selected_options[1]?.option_name}
+                    </td>
+                    <td>${token.line_items[5]?.quantity}</td>
+                    <td>${token.line_items[5]?.price.formatted_with_code}</td>
+                  </tr>
+                `) : null
+              }
+              ${
+                token.line_items[6] ? (`
+                  <tr>
+                    <td>
+                      ${token.line_items[6]?.product_name} 
+                      ${token.line_items[6]?.selected_options[0]?.option_name}
+                      ${token.line_items[6]?.selected_options[1]?.option_name}
+                    </td>
+                    <td>${token.line_items[6]?.quantity}</td>
+                    <td>${token.line_items[6]?.price.formatted_with_code}</td>
+                  </tr>
+                `) : null
+              }
+              ${
+                token.line_items[8] ? (`
+                  <tr>
+                    <td>
+                      ${token.line_items[8]?.product_name} 
+                      ${token.line_items[8]?.selected_options[0]?.option_name}
+                      ${token.line_items[8]?.selected_options[1]?.option_name}
+                    </td>
+                    <td>${token.line_items[8]?.quantity}</td>
+                    <td>${token.line_items[8]?.price.formatted_with_code}</td>
+                  </tr>
+                `) : null
+              }
+              ${
+                token.line_items[9] ? (`
+                  <tr>
+                    <td>
+                      ${token.line_items[9]?.product_name} 
+                      ${token.line_items[9]?.selected_options[0]?.option_name}
+                      ${token.line_items[9]?.selected_options[1]?.option_name}
+                    </td>
+                    <td>${token.line_items[9]?.quantity}</td>
+                    <td>${token.line_items[9]?.price.formatted_with_code}</td>
+                  </tr>
+                `) : null
+              }
+          </table>
+    </div>
+      `,
     }
     await emailjs.send(
       'service_2ceha86',
@@ -229,7 +346,6 @@ function MyApp({ Component, pageProps }) {
 
   const fetchCategories = async () => {
     const { data } = await commerce.categories.list()
-
     setCategory(data)
   }
   useEffect(() => {
