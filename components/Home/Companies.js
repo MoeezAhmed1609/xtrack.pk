@@ -59,8 +59,8 @@ const Companies = ({ categories }) => {
                     >
                       <img
                         src={cat.assets[0].url}
-                        className="card-img-top mx-auto my-auto"
-                        alt="..."
+                        className="card-img-top comapny-image mx-auto my-auto"
+                        alt="brand"
                       />
                     </div>
                   </Link>

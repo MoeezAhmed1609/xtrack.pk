@@ -367,10 +367,12 @@ function MyApp({ Component, pageProps }) {
     setCategory(data)
   }
   useEffect(() => {
-    import('bootstrap/dist/js/bootstrap')
     fetchProducts()
     fetchCategories()
     fetchCart()
+  } , [])
+  useEffect(() => {
+    import('bootstrap/dist/js/bootstrap')
     client
       .fetch(`*[_type == 'webtitle']`)
       .then((data) => {

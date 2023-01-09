@@ -477,7 +477,9 @@ html{
     transform: rotate(360deg);
   }
 }
-
+.swipre-product-img{
+  height: 340px !important;
+}
 .swiper-product {
   margin : 0 !important;
   /* width: 60%; */
@@ -490,9 +492,9 @@ html{
   }
 } */
 
-.swipre-product-img{
+/* .swipre-product-img{
   height: 50vh !important;
-}
+} */
 
 
 /* review panel */
@@ -637,4 +639,7 @@ html{
 
 .cursor-d{
   cursor: not-allowed !important;
+}
+.comapny-image{
+  height: 120px !important;
 }

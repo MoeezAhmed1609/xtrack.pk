@@ -108,7 +108,6 @@ const Product = ({ product }) => {
                   modules={[Navigation]}
                   className="mySwiper swiper-product"
                   slidesPerView={1}
-                  style={{ height: '60vh' }}
                 >
                   {product.assets.map((asset) => (
                     <>
@@ -131,7 +130,7 @@ const Product = ({ product }) => {
                 src={product.assets[0].url}
                 alt={product.name}
                 className="cursor-p"
-                style={{ height: '65vh' }}
+                style={{ height: '350px' }}
                 onClick={() => openInNewTab(product.assets[0].url)}
               />
             )}
