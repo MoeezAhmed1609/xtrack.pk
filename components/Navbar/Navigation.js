@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import OffCanvas from './OffCanvas'
 import Search from './Search'
@@ -233,14 +232,14 @@ const Navigation = ({ products }) => {
           </div>
           <div className="col p-0 align-self-center ms-lg-3 ms-4">
             <Link href="/">
-              <Image
+              <img
                 src={logo}
                 alt="logo"
                 className="img-fluid logo-x"
                 height={45}
                 width={45}
               />
-              <Image
+              <img
                 src={track}
                 alt="logo"
                 className="img-fluid logo-t"

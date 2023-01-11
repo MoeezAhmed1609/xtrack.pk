@@ -3,10 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
     "@babel/core": "^7.20.5",
@@ -16,7 +15,6 @@
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^3.4.1",
     "@sanity/image-url": "^1.0.1",
-    "@sendgrid/mail": "^7.7.0",
     "axios": "^1.2.2",
     "bootstrap": "^5.2.3",
     "dotenv": "^16.0.3",
@@ -24,12 +22,10 @@
     "git": "^0.1.5",
     "next": "13.0.6",
     "next-sanity-image": "^5.0.0",
-    "nx": "^15.4.4",
     "react": "^18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
     "sanity": "^3.0.6",
-    "swiper": "^8.4.5",
-    "uuid": "^9.0.0"
+    "swiper": "^8.4.5"
   }
 }

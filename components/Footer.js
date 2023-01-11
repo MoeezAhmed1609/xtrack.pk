@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import logo from '../assets/xtrack.png'
 import track from '../assets/track-2.png'
 import {
@@ -11,6 +10,7 @@ import {
   AiOutlineInstagram,
   AiOutlineTwitter,
   AiOutlineGooglePlus,
+  AiOutlineYoutube
 } from 'react-icons/ai'
 
 const Footer = () => {
@@ -49,8 +49,8 @@ const Footer = () => {
           </div>
           <div className="col py-4">
             <Link href="/">
-              <Image src={logo} alt="logo" height={50} />
-              <Image src={track} alt="logo" height={45} />
+              <img src={logo} alt="logo" height={50} />
+              <img src={track} alt="logo" height={45} />
             </Link>
           </div>
           <div className="row m-0 px-4 py-3">
@@ -104,6 +104,13 @@ const Footer = () => {
                     >
                       <span>
                         <AiOutlineInstagram />
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.youtube.com/channel/UCY4IDvLi8yxG6MRROmqd65A" target="blank">
+                      <span>
+                        <AiOutlineYoutube />
                       </span>
                     </a>
                   </li>

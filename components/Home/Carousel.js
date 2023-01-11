@@ -6,7 +6,6 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import { Navigation, Autoplay } from 'swiper'
 import { urlFor } from '../../lib/client'
-import Image from 'next/image'
 
 const Carousel = ({ banner }) => {
   return (

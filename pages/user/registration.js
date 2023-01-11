@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import logo from '../../assets/xtrack.png'
 import track from '../../assets/track-2.png'
 import { AiOutlineGoogle } from 'react-icons/ai'
@@ -14,8 +13,8 @@ const registration = () => {
       <div className="row d-flex flex-column justify-content-center align-items-center text-center">
         <div className="py-5 col bg-dark">
           <Link href="/">
-            <Image src={logo} alt="logo" height={50} />
-            <Image src={track} alt="logo" height={45} />
+            <img src={logo} alt="logo" height={50} />
+            <img src={track} alt="logo" height={45} />
           </Link>
         </div>
         <div className="pt-3 col text-uppercase text-center">
