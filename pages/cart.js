@@ -112,6 +112,7 @@ const CartItem = ({
           <img
             className="ms-lg-3 ms-md-2 ms-0"
             src={image?.url}
+            alt={name}
             height={70}
           ></img>
           <span className="text-small text-uppercase fw-normal ps-3 d-none d-sm-block">

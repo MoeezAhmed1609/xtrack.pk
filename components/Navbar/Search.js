@@ -52,7 +52,7 @@ const Search = ({ products }) => {
                     <div className="col-3 ms-sm-2">
                       <img
                         src={product.image.url}
-                        alt="product-image"
+                        alt={product.name}
                         width={50}
                       />
                     </div>

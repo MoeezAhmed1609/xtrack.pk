@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Link from 'next/link'
 import OffCanvas from './OffCanvas'
 import Search from './Search'
 import User from './User'
 import Cart from './Cart/Cart'
-import logo from '../../assets/xtrack.png'
-import track from '../../assets/track-2.png'
-
+import StateContext from '../../context/StateContext'
+import { urlFor } from '../../lib/client'
 const Navigation = ({ products }) => {
+  const context = useContext(StateContext)
+  const title = context.title[0]
   return (
     <>
       <div className="container-fluid bg-dark fixed-top">
@@ -232,20 +233,12 @@ const Navigation = ({ products }) => {
           </div>
           <div className="col p-0 align-self-center ms-lg-3 ms-4">
             <Link href="/">
-              <img
-                src={logo}
-                alt="logo"
-                className="img-fluid logo-x"
-                height={45}
-                width={45}
-              />
-              <img
-                src={track}
-                alt="logo"
-                className="img-fluid logo-t"
-                height={45}
-                width={140}
-              />
+              {title ? <img
+                src={urlFor(title?.logo)}
+                alt="xtrack"
+                className=""
+                height='60px'
+              /> : null }
             </Link>
           </div>
           <ul className="nav col justify-content-end align-items-center">

@@ -13,5 +13,13 @@ export default {
       title: 'Description',
       type: 'text',
     },
+    {
+      name : 'logo',
+      title: 'Logo',
+      type : 'image',
+      options: {
+        hotspot: true,
+      },
+    }
   ],
 }

@@ -24,50 +24,64 @@ const Companies = ({ categories }) => {
           </span>
         </div>
         <div className="row mb-4 justify-content-center align-items-center">
-          <Swiper
-            navigation={true}
-            grabCursor={true}
-            modules={[Navigation]}
-            className="mySwiper px-3 py-3"
-            style={{height : '230px'}}
-            breakpoints={{
-              0: {
-                slidesPerView: 1,
-                spaceBetween: 30,
-              },
-              480: {
-                slidesPerView: 2,
-                spaceBetween: 30,
-              },
-              768: {
-                slidesPerView: 3,
-                spaceBetween: 40,
-              },
-              1024: {
-                slidesPerView: 4,
-                spaceBetween: 40,
-              },
-            }}
-          >
-            {brands[0]?.map((cat) => {
-              return (
-                <SwiperSlide key={cat.id} className='d-flex justify-content-center align-items-center'>
-                  <Link href={`/categories/${cat.slug}`} className="text-decoration-none text-dark">
-                    <div
-                      className="card border-0 rounded-0 my-4"
-                      style={{ width: '15rem' }}
+          {brands.length > 0 ? (
+            <Swiper
+              navigation={true}
+              grabCursor={true}
+              modules={[Navigation]}
+              className="mySwiper px-3 py-3"
+              style={{ height: '230px' }}
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                  spaceBetween: 30,
+                },
+                480: {
+                  slidesPerView: 2,
+                  spaceBetween: 30,
+                },
+                768: {
+                  slidesPerView: 3,
+                  spaceBetween: 40,
+                },
+                1024: {
+                  slidesPerView: 4,
+                  spaceBetween: 40,
+                },
+              }}
+            >
+              {brands[0]?.map((cat) => {
+                return (
+                  <SwiperSlide
+                    key={cat.id}
+                    className="d-flex justify-content-center align-items-center"
+                  >
+                    <Link
+                      href={`/categories/${cat.slug}`}
+                      className="text-decoration-none text-dark"
                     >
-                      <img
-                        src={cat.assets[0].url}
-                        className="card-img-top comapny-image mx-auto my-auto"
-                        alt="brand"
-                      />
-                    </div>
-                  </Link>
-                </SwiperSlide>
-              )
-            })}
-          </Swiper>
+                      <div
+                        className="card border-0 rounded-0 my-4"
+                        style={{ width: '15rem' }}
+                      >
+                        <img
+                          src={cat.assets[0].url}
+                          className="card-img-top comapny-image mx-auto my-auto"
+                          alt={cat.name}
+                        />
+                      </div>
+                    </Link>
+                  </SwiperSlide>
+                )
+              })}
+            </Swiper>
+          ) : (
+            <div className="loaders">
+              <div className="loader1">
+                <span />
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </>

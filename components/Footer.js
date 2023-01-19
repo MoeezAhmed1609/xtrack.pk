@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Link from 'next/link'
-import logo from '../assets/xtrack.png'
-import track from '../assets/track-2.png'
+import StateContext from '../context/StateContext'
 import {
   AiOutlineMail,
   AiOutlinePhone,
@@ -10,10 +9,13 @@ import {
   AiOutlineInstagram,
   AiOutlineTwitter,
   AiOutlineGooglePlus,
-  AiOutlineYoutube
+  AiOutlineYoutube,
 } from 'react-icons/ai'
+import { urlFor } from '../lib/client'
 
 const Footer = () => {
+  const context = useContext(StateContext)
+  const title = context.title[0]
   return (
     <>
       <div className="container-fluid p-0 bg-dark">
@@ -29,7 +31,8 @@ const Footer = () => {
                 <AiOutlineMail />
               </span>
               <span className="text-tiny">
-                Email support : <span className='text-lowercase'>xtrack.pk@gmail.com</span>
+                Email support :{' '}
+                <span className="text-lowercase">xtrack.pk@gmail.com</span>
               </span>
             </div>
             <div className="col-lg-3 col-md-6 col-12 text-white text-uppercase">
@@ -47,16 +50,15 @@ const Footer = () => {
               </span>
             </div>
           </div>
-          <div className="col py-4">
+          <div className="col py-2">
             <Link href="/">
-              <img src={logo} alt="logo" height={50} />
-              <img src={track} alt="logo" height={45} />
+              {title ? <img src={urlFor(title.logo)} alt="xtrack" height='100px' /> : null}
             </Link>
           </div>
-          <div className="row m-0 px-4 py-3">
+          <div className="row m-0 px-4 py-2">
             <div className="container">
               <ul className="list-group">
-              <li className="list-group-item bg-transparent border-0 py-0">
+                <li className="list-group-item bg-transparent border-0 py-0">
                   <Link
                     href="/docs/about"
                     className="text-small text-decoration-none text-white"
@@ -108,7 +110,10 @@ const Footer = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.youtube.com/channel/UCY4IDvLi8yxG6MRROmqd65A" target="blank">
+                    <a
+                      href="https://www.youtube.com/channel/UCY4IDvLi8yxG6MRROmqd65A"
+                      target="blank"
+                    >
                       <span>
                         <AiOutlineYoutube />
                       </span>

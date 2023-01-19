@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node server.js",
+    "dev": "next dev",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "next start"
   },
   "dependencies": {
     "@babel/core": "^7.20.5",
@@ -26,6 +26,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
     "sanity": "^3.0.6",
-    "swiper": "^8.4.5"
+    "swiper": "^8.4.5",
+    "uuid": "^9.0.0"
   }
 }

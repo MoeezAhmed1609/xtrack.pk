@@ -370,7 +370,7 @@ function MyApp({ Component, pageProps }) {
     fetchProducts()
     fetchCategories()
     fetchCart()
-  } , [])
+  }, [])
   useEffect(() => {
     import('bootstrap/dist/js/bootstrap')
     client
@@ -409,10 +409,16 @@ function MyApp({ Component, pageProps }) {
           category,
           products,
           database,
+          title,
         }}
       >
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta
+            name="keywords"
+            content="xtrack, xtrackpk, xtrack pk, supplements store, pakistan, gym, supplements, gym supplements, health supplements, supplements store in pakistan, fitness, fitness supplements, bodybuilding, health, how to lose weight, weight loss
+, workout, diet, training, nutrition, mens health, fitness world, protein, mass gainer, weigth, shakers, gym accessories, gym wears, pre workout, creatine, protein in pakistan, whey protein, whey protein in pakistan, protein powder, buy supplement, buy supplement online"
+          />
           <meta name="description" content={title[0]?.description} />
           <title>{title[0]?.title}</title>
           <link rel="icon" href="/xtrack.ico" />

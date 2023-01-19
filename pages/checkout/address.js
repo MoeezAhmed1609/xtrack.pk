@@ -114,6 +114,7 @@ const checkout = () => {
                       required
                       type="text"
                       placeholder="Khizar"
+                      pattern="[A-Za-z]*"
                       onChange={(e) => setFname(e.target.value)}
                       aria-label=".form-control-sm example"
                     ></input>
@@ -149,6 +150,7 @@ const checkout = () => {
                       name="phone"
                       required
                       type="text"
+                      pattern="[0-9]+"
                       placeholder="03*********"
                       onChange={(e) => setPhone(e.target.value)}
                       aria-label="phone"
@@ -248,6 +250,7 @@ const checkout = () => {
                       required
                       type="text"
                       placeholder="ZIP"
+                      pattern="[0-9]+"
                       onChange={(e) => setZip(e.target.value)}
                       aria-label="Zip"
                     ></input>

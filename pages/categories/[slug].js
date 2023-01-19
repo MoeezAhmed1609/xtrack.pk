@@ -1,10 +1,7 @@
 import React, { useContext, useState } from 'react'
 import StateContext from '../../context/StateContext'
 import Link from 'next/link'
-import { AiOutlineStar } from 'react-icons/ai'
-import { BiCart } from 'react-icons/bi'
-import commerce from '../../lib/commerce'
-import Spinner from '../../components/Spinner'
+import Head from 'next/head'
 
 export async function getServerSideProps({ params }) {
   const { slug } = params
@@ -19,16 +16,21 @@ const CategoryList = ({ slug }) => {
   const context = useContext(StateContext)
   const pageProducts = []
   const pageCategory = []
+  const title = context.title[0]
   context.products.data?.map((product) =>
     product.categories.map((category) =>
       category.slug == slug ? pageProducts.push(product) : null,
     ),
   )
   context.category.map((cat) =>
-    cat.slug == slug ? pageCategory.push(cat) : null
+    cat.slug == slug ? pageCategory.push(cat) : null,
   )
   return (
     <>
+      <Head>
+        <meta name="description" content={title?.description} />
+        <title>{pageCategory[0]?.name} | Xtrack.pk</title>
+      </Head>
       <div className="container category-box my-4">
         <div className="container">
           <span className="text-uppercase fs-3">{pageCategory[0]?.name}</span>
@@ -49,7 +51,7 @@ const CategoryList = ({ slug }) => {
                       src={product.image.url}
                       className="card-img-top mx-auto mt-2 cat-p-img"
                       alt="Card Image"
-                      style={{maxHeight : '200px'}}
+                      style={{ maxHeight: '200px' }}
                     />
                   </Link>
                   <div className="card-body">

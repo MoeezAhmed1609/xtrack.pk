@@ -89,57 +89,66 @@ const Categories = ({ products, categories, slug, setSlug }) => {
       </div>
       <div className="container-fluid">
         <div className="row justify-content-center align-items-center">
-          <Swiper
-            navigation={true}
-            grabCursor={true}
-            modules={[Navigation]}
-            className="mySwiper px-3 py-3"
-            breakpoints={{
-              0: {
-                slidesPerView: 1,
-                spaceBetween: 30,
-              },
-              480: {
-                slidesPerView: 2,
-                spaceBetween: 30,
-              },
-              768: {
-                slidesPerView: 3,
-                spaceBetween: 40,
-              },
-              1024: {
-                slidesPerView: 4,
-                spaceBetween: 40,
-              },
-            }}
-          >
-            {brands?.map((cat) => {
-              return (
-                <SwiperSlide key={cat.id}>
-                  <Link
-                    href={`/categories/${cat.slug}`}
-                    className="text-decoration-none text-dark"
-                  >
-                    <div
-                      className="card border-0 rounded-0 m-4"
-                      style={{ width: '15rem' }}
+          {brands.length > 0 ? (
+            <Swiper
+              navigation={true}
+              grabCursor={true}
+              modules={[Navigation]}
+              className="mySwiper px-3 py-3"
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                  spaceBetween: 30,
+                },
+                480: {
+                  slidesPerView: 2,
+                  spaceBetween: 30,
+                },
+                768: {
+                  slidesPerView: 3,
+                  spaceBetween: 40,
+                },
+                1024: {
+                  slidesPerView: 4,
+                  spaceBetween: 40,
+                },
+              }}
+            >
+              {brands?.map((cat) => {
+                return (
+                  <SwiperSlide key={cat.id}>
+                    <Link
+                      href={`/categories/${cat.slug}`}
+                      className="text-decoration-none text-dark"
                     >
-                      <img
-                        src={cat.assets[0]?.url}
-                        className="card-img-top mx-auto my-auto"
-                        alt={cat.name}
-                      />
-                      <div className="card-body text-center">
-                        <span className="text-uppercase text-small fw-bold">
-                          {cat.name}
-                        </span>
+                      <div
+                        className="card border-0 rounded-0 m-4"
+                        style={{ width: '15rem' }}
+                      >
+                        <img
+                          src={cat.assets[0]?.url}
+                          className="card-img-top mx-auto my-auto"
+                          alt={cat.name}
+                        />
+                        <div className="card-body text-center">
+                          <span className="text-uppercase text-small fw-bold">
+                            {cat.name}
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                  </Link>
-                </SwiperSlide>
-              )
-            })}
-          </Swiper>
+                    </Link>
+                  </SwiperSlide>
+                )
+              })}
+            </Swiper>
+          ) : (
+            <div className="loaders">
+              <div className="loader1">
+                <span />
+              </div>
+            </div>
+          )}
+
           <div className="text-center bg-dark my-4 py-3">
             <span className="text-uppercase fs-2 text-danger fw-bold">
               Popular Categories

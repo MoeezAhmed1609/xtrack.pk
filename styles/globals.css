@@ -643,3 +643,41 @@ html{
 .comapny-image{
   height: 120px !important;
 }
+
+/* loaders */
+
+.loaders {
+  min-height: 240px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  counter-reset: list;
+}
+.loaders div {
+  position: relative;
+  margin: 0 100px;
+}
+/* .loaders div::before {
+  counter-increment: list;
+  content: counter(list,decimal-leading-zero);
+  position: absolute;
+  top: -20px;
+  left: -25px;
+  font-size: 16px;
+} */
+.loader1 span {
+  display: block;
+  width: 70px;
+  height: 70px;
+  border: 3px solid;
+  border-radius: 50%;
+  border-color: transparent #000 #000;
+  animation: cssload-spin 690ms infinite linear;
+}
+@keyframes cssload-spin {
+  100% {
+    transform: rotate(360deg);
+    transform: rotate(360deg);
+ }
+}
