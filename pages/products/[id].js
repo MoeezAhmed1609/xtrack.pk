@@ -21,16 +21,15 @@ import { startAfter } from 'firebase/firestore'
 
 export async function getServerSideProps({ params }) {
   const { id } = params
-  const product = await commerce.products.retrieve(id)
 
   return {
     props: {
-      product,
+      id,
     },
   }
 }
 
-const Product = ({ product }) => {
+const Product = ({ id }) => {
   const context = useContext(CartStateContext)
   const state = useContext(StateContext)
   const [sizeId, setSizeId] = useState('')
@@ -39,6 +38,7 @@ const Product = ({ product }) => {
   const [flavour, setFlavour] = useState('')
   const [reviews, setReviews] = useState([])
   const [usage, setUsage] = useState([])
+  const [product, setProduct] = useState([])
   const productusage = []
   const title = state.title[0]
   const disableBtn = size == '' || flavour == '' ? 'cursor-d' : null
@@ -81,18 +81,21 @@ const Product = ({ product }) => {
       .catch(console.error)
 
     const dbRef = ref(state.database)
-    get(child(dbRef, `reviews/${product.name}`))
-      .then((snapshot) => {
-        if (snapshot.exists()) {
-          setReviews(snapshot.val())
-        } else {
-          console.log('No data available')
-        }
-      })
-      .catch((error) => {
-        console.error(error)
-      })
-  }, [])
+    commerce.products.retrieve(id).then((product) => {
+      setProduct(product)
+      get(child(dbRef, `reviews/${product.name}`))
+        .then((snapshot) => {
+          if (snapshot.exists()) {
+            setReviews(snapshot.val())
+          } else {
+            console.log('No data available')
+          }
+        })
+        .catch((error) => {
+          console.error(error)
+        })
+    }, [])
+  })
   usage?.map((useg) =>
     useg.name.toUpperCase() == product.name?.toUpperCase()
       ? productusage.push(useg)
@@ -101,8 +104,17 @@ const Product = ({ product }) => {
   return (
     <>
       <Head>
-        <meta name="description" content={product.seo.description ? product.seo?.description : title.description} />
-        <title>{product.seo.title ? product.seo?.title : product.name} | Xtrack.pk</title>
+        <meta
+          name="description"
+          content={
+            product?.seo?.description
+              ? product.seo?.description
+              : title?.description
+          }
+        />
+        <title>
+          {product.seo?.title ? product.seo?.title : product.name} | Xtrack.pk
+        </title>
       </Head>
       {product.length !== 0 ? (
         <>
@@ -197,7 +209,7 @@ const Product = ({ product }) => {
                       {product.variant_groups[0]?.name}
                     </span>
                     {product.variant_groups
-                      ? product.variant_groups[0].options.map((option) => {
+                      ? product.variant_groups[0]?.options.map((option) => {
                           return (
                             <>
                               <div
@@ -510,7 +522,7 @@ const Product = ({ product }) => {
           </div>
         </>
       ) : (
-        <div className="loaders">
+        <div className="loaders" style={{height : '500px'}}>
           <div className="loader1">
             <span />
           </div>

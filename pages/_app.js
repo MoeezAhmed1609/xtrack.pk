@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }) {
   const addToCart = async (id, quantity) => {
     await commerce.cart.add(id, quantity).then((cart) => {
       setCart(cart)
-      // window.location = '/cart'
+      window.location = '/cart'
     })
   }
   const addSingleVariantToCart = async (id, quantity, group, variant) => {
@@ -119,13 +119,14 @@ function MyApp({ Component, pageProps }) {
           firstname: f_name,
           secondname: s_name,
           email: email,
+        }).then((a) => {
+          event.target.f_name.value = ''
+          event.target.s_name.value = ''
+          event.target.email.value = ''
+          event.target.password.value = ''
+          event.target.confirmPassword.value = ''
         })
-        event.target.f_name.value = ''
-        event.target.s_name.value = ''
-        event.target.email.value = ''
-        event.target.password.value = ''
-        event.target.confirmPassword.value = ''
-        window.location = '/'
+        window.location = '/user/dashboard'
       })
       .catch((error) => {
         setMessage(error.message)
@@ -142,7 +143,7 @@ function MyApp({ Component, pageProps }) {
         setType(1)
         event.target.email.value = ''
         event.target.password.value = ''
-        window.location = '/'
+        window.location = '/user/dashboard'
       })
       .catch((error) => {
         setMessage(error.message)

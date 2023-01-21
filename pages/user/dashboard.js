@@ -54,7 +54,7 @@ const dashboard = () => {
     <Head>
       <title>Dashboard | Xtrack.pk</title>
     </Head>
-      <div style={{ minHeight: '70vh' }}>
+      <div style={{ minHeight: '70vh' }} className='d-flex justify-content-center align-items-center'>
         {context.auth.currentUser ? (
           <>
             <div className="container my-5">
