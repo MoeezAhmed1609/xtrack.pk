@@ -47,21 +47,6 @@ const checkout = () => {
     setState(Object.keys(subdivisions)[0])
   }
 
-  // const orderData = {
-  //   line_items: token.lineItems,
-  //   custmer: { firstname: fname, lastname: sname, email: email },
-  //   shipping: { 
-  //     name: 'Domestic',
-  //     street: address, 
-  //     county_state: state,
-  //     postal_zip_code : zip,
-  //     shipping_country : countryCode,
-  //    },
-  //   fulfillment: {
-  //     shipping_method: token.shipping_methods[0]
-  //   },
-  // }
-
   useEffect(() => {
     const generateToken = async () => {
       try {
@@ -114,6 +99,7 @@ const checkout = () => {
                       required
                       type="text"
                       placeholder="Khizar"
+                      value={stated.auth?.currentUser ? stated.auth.currentUser?.displayName.toLowerCase() : null}
                       pattern="[A-Za-z]*"
                       onChange={(e) => setFname(e.target.value)}
                       aria-label=".form-control-sm example"
@@ -247,7 +233,6 @@ const checkout = () => {
                       className="form-control form-control-sm mn-1 shadow-none border-dark"
                       id="Zip"
                       name="Zip"
-                      required
                       type="text"
                       placeholder="ZIP"
                       pattern="[0-9]+"

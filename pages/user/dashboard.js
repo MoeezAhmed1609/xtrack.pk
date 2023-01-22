@@ -152,8 +152,9 @@ const dashboard = () => {
                           </thead>
                           <tbody>
                             {Object.values(userOrder).map((order) =>
-                              order.products.map((product) => (
-                                <tr key={product.id}>
+                              order.products.map((product) =>
+                              (
+                                <tr>
                                   <th
                                     scope="row"
                                     className="position-relative d-flex align-items-center"
@@ -172,7 +173,7 @@ const dashboard = () => {
                                       <form
                                         className="dropdown-menu review-panel py-0"
                                         onSubmit={reviewSubmitHandler(
-                                          product.product_name,
+                                          product.name,
                                         )}
                                       >
                                         <div className="form-floating bg-white">
@@ -187,7 +188,7 @@ const dashboard = () => {
                                             for="floatingTextarea"
                                             className="text-small"
                                           >
-                                            {product.product_name}
+                                            {product.name}
                                           </label>
                                         </div>
                                         <div className="col-auto">
@@ -217,23 +218,18 @@ const dashboard = () => {
                                         </button>
                                       </form>
                                     </div>
-                                    <img
-                                      src={product.image?.url}
-                                      height="70px"
-                                      alt={product.product_name}
-                                    />
-                                    <span className="text-small d-none d-sm-block">
-                                      {product.product_name}
+                                    <span className="text-small d-none d-sm-block ps-2">
+                                      {product.name}
                                     </span>
                                     <span className="ps-1 d-none d-sm-block">
                                       (
-                                      {product.selected_options?.map(
-                                        (option) => (
+                                      {product.variants?.map(
+                                        (option , index) => (
                                           <span
                                             className="text-tiny px-1"
-                                            key={option._id}
+                                            key={index}
                                           >
-                                            {option.option_name}
+                                            {option}
                                           </span>
                                         ),
                                       )}
@@ -241,17 +237,18 @@ const dashboard = () => {
                                     </span>
                                   </th>
                                   <td>
-                                    <div className="pt-2">
+                                    <div className="pt-2 text-small">
                                       {product?.quantity}
                                     </div>
                                   </td>
                                   <td>
-                                    <div className="pt-2">
-                                      {product.line_total?.formatted}
+                                    <div className="pt-2 text-small">
+                                      {product?.price}
                                     </div>
                                   </td>
                                 </tr>
-                              )),
+                              )
+                              ),
                             )}
                           </tbody>
                         </table>

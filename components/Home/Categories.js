@@ -24,7 +24,7 @@ const Categories = ({ products, categories, slug, setSlug }) => {
   const aminosSlug = []
 
   categories?.map((category) => {
-    if (category.slug == 'bcaa-eaa' || category.slug == 'pre-workouts') {
+    if (category.slug == 'pre-workouts') {
       aminosSlug.push(category)
     }
   })

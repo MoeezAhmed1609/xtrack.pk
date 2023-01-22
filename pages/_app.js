@@ -208,6 +208,7 @@ function MyApp({ Component, pageProps }) {
       phone: phone,
       email: email,
       address: address,
+      payment : payment,
       orderhtml: `
       <div>
           <table>
