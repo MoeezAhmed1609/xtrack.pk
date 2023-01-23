@@ -156,13 +156,13 @@ const Product = ({ id }) => {
                 )}
               </div>
               <div className="col-lg-6 col-12 d-flex flex-column pt-4 ps-lg-2 ps-5">
-                <div className="row text-small">
+                <div className="row text-small ms-3 my-2" style={{width : '200px'}}>
                   {product.inventory.available > 0 ? (
-                    <span className="text-danger text-uppercase col ps-2">
+                    <span className="text-white text-center text-uppercase col bg-danger px-3 py-2 fs-6">
                       In Stock
                     </span>
                   ) : (
-                    <span className="text-danger text-uppercase col ps-2">
+                    <span className="text-white text-center text-uppercase col bg-danger px-3 py-2 fs-6">
                       Out Of Stock
                     </span>
                   )}

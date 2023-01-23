@@ -3,7 +3,7 @@ import { BsCreditCard2Front, BsShieldCheck, BsTelephone , BsTruck } from 'react-
 
 const Delievery = () => {
   return (
-    <div className="container-fluid bg-danger">
+    <div className="container-fluid bg-danger mt-2">
       <div className="row align-items-center justify-content-center text-center fw-bolder">
         <div className="col-lg-3 col-md-6 col-sm-12">
           <span className="text-white ps-2 fs-3 fw-bold">

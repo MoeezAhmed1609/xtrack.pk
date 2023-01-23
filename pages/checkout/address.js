@@ -99,7 +99,7 @@ const checkout = () => {
                       required
                       type="text"
                       placeholder="Khizar"
-                      value={stated.auth?.currentUser ? stated.auth.currentUser?.displayName.toLowerCase() : null}
+                      value={stated.auth?.currentUser ? stated.auth.currentUser?.displayName?.toLowerCase() : null}
                       pattern="[A-Za-z]*"
                       onChange={(e) => setFname(e.target.value)}
                       aria-label=".form-control-sm example"
@@ -326,7 +326,7 @@ const checkout = () => {
                     role="tab"
                     aria-controls="v-pills-home"
                     aria-selected="true"
-                    onClick={() => setPaymentMethod('COD')}
+                    onClick={() => setPaymentMethod('Cash on delivery')}
                   >
                     Cash on delievery
                   </button>

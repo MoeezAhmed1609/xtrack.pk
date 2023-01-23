@@ -50,6 +50,7 @@ const registration = () => {
                   <input
                     type="text"
                     name="f_name"
+                    required
                     className="form-control shadow-none border-dark text-capitalize"
                     id="exampleName"
                     aria-describedby="emailHelp"
@@ -62,6 +63,7 @@ const registration = () => {
                   <input
                     type="text"
                     name="s_name"
+                    required
                     className="form-control shadow-none border-dark text-capitalize"
                     id="exampleName"
                     aria-describedby="emailHelp"
@@ -75,6 +77,7 @@ const registration = () => {
                 <input
                   type="email"
                   name="email"
+                  required
                   className="form-control shadow-none border-dark"
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
@@ -87,6 +90,7 @@ const registration = () => {
                 <input
                   type="password"
                   name="password"
+                  required
                   className="form-control shadow-none border-dark"
                   id="exampleInputPassword1"
                 />
@@ -98,6 +102,7 @@ const registration = () => {
                 <input
                   type="password"
                   name="confirmPassword"
+                  required
                   className="form-control shadow-none border-dark"
                   id="exampleInputPassword2"
                 />
