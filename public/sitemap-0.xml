@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>https://xtrack.pk</loc><lastmod>2023-01-24T10:12:44.727Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://xtrack.pk/blog</loc><lastmod>2023-01-24T10:12:44.727Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://xtrack.pk/cart</loc><lastmod>2023-01-24T10:12:44.727Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://xtrack.pk/checkout/address</loc><lastmod>2023-01-24T10:12:44.728Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://xtrack.pk/checkout/success</loc><lastmod>2023-01-24T10:12:44.728Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://xtrack.pk/connect</loc><lastmod>2023-01-24T10:12:44.728Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://xtrack.pk/docs/about</loc><lastmod>2023-01-24T10:12:44.728Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://xtrack.pk/docs/delivery-information</loc><lastmod>2023-01-24T10:12:44.728Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://xtrack.pk/docs/return-and-refund</loc><lastmod>2023-01-24T10:12:44.728Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://xtrack.pk/docs/terms-and-conditions</loc><lastmod>2023-01-24T10:12:44.728Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://xtrack.pk/user/dashboard</loc><lastmod>2023-01-24T10:12:44.728Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://xtrack.pk/user/login</loc><lastmod>2023-01-24T10:12:44.728Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://xtrack.pk/user/registration</loc><lastmod>2023-01-24T10:12:44.728Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+</urlset>
