@@ -13,7 +13,7 @@ const NewsProducts = ({ products , discount }) => {
       <div className="container-fluid text-center mb-4 p-0">
         <div className="text-center bg-dark mb-4 py-3">
           <span className="text-uppercase text-white fs-6 ">
-            Shop with best dicsount offers
+            Shop with best discount offers
           </span>
           <br />
           <span className="text-uppercase fs-2 text-danger fw-bold">
