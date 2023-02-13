@@ -16,7 +16,7 @@ import {
   updateProfile,
 } from 'firebase/auth'
 import { getDatabase, ref, set, child, get } from 'firebase/database'
-import { Navigation, Footer } from '../components/index'
+import { Navigation, Footer , Whatsapp } from '../components/index'
 import { client } from '../lib/client'
 
 function MyApp({ Component, pageProps }) {
@@ -428,6 +428,7 @@ function MyApp({ Component, pageProps }) {
         <header className="mb-5">
           <Navigation products={products} />
         </header>
+        <Whatsapp />
         <Component {...pageProps} />
         <footer>
           <Footer />

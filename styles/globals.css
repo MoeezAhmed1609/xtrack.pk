@@ -681,3 +681,14 @@ html{
     transform: rotate(360deg);
  }
 }
+
+
+/* whatsapp */
+
+.whatsapp{
+  height: 60px;
+  width: 60px;
+  z-index: 999;
+  bottom: 30px;
+  right: 30px;
+}

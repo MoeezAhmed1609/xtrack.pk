@@ -7,6 +7,7 @@ export {default as Stacks} from './Home/Offers/Stacks';
 export {default as OfferProducts} from './Home/Offers/OfferProducts';
 export {default as Categories} from './Home/Categories';
 export {default as Companies} from './Home/Companies'
+export {default as Whatsapp} from './Whatsapp'
 
 // Footer
 export {default as Footer} from './Footer';
