@@ -133,7 +133,7 @@ const Footer = () => {
         </div>
       </div>
     </>
-    // this is footer
+    // this is footer for xtrack.pk
   )
 }
 
