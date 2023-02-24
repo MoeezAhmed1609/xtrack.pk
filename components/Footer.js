@@ -133,6 +133,7 @@ const Footer = () => {
         </div>
       </div>
     </>
+    // this is footer
   )
 }
 
