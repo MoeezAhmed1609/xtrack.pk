@@ -369,6 +369,7 @@ function MyApp({ Component, pageProps }) {
     setCategory(data)
   }
   // useEffect
+  // ok
   useEffect(() => {
     fetchProducts()
     fetchCategories()
