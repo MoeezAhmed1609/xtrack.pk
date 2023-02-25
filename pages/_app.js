@@ -368,6 +368,7 @@ function MyApp({ Component, pageProps }) {
     const { data } = await commerce.categories.list()
     setCategory(data)
   }
+  // useEffect
   useEffect(() => {
     fetchProducts()
     fetchCategories()
