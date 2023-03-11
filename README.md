@@ -5,7 +5,7 @@ chutiyaThis is a [Next.js](https://nextjs.org/) project bootstrapped with [`crea
 First, run the development server:
 
 ```bash
-npm run dev
+npm run dev xtrack
 # or
 yarn dev
 ``
