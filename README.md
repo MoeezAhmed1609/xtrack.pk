@@ -2,7 +2,7 @@ chutiyaThis is a [Next.js](https://nextjs.org/) project bootstrapped with [`crea
 
 ## Getting Started
 
-First, run the development server:
+First, run the development server:khizar
 
 ```bash
 npm run dev xtrack
