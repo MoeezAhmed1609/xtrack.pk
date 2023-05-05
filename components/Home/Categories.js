@@ -29,9 +29,10 @@ const Categories = ({ products, categories, slug, setSlug }) => {
     }
   })
   const healthSlug = []
+  console.log(categories)
 
   categories?.map((category) => {
-    if (category.slug == 'multivitamins') {
+    if (category.slug == 'fat-loss-products') {
       healthSlug.push(category)
     }
   })
