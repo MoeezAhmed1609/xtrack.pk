@@ -4,7 +4,6 @@ import BlockContent from '@sanity/block-content-to-react'
 import Image from 'next/image'
 
 const Posts = ({ post }) => {
-  console.log(post)
   return (
     <>
       <div className="container-fluid py-4 post-box">

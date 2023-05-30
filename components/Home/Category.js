@@ -3,7 +3,6 @@ import Link from 'next/link'
 import Slider from '../Slider'
 
 const Category = ({ title, products , categories }) => {
-  console.log(categories)
   return (
     <>
         <div className="col-lg-2 col-md-3 col-12 my-2 text-center bg-dark product-tag-box">

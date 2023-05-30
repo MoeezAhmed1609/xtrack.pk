@@ -154,7 +154,6 @@ function MyApp({ Component, pageProps }) {
   const logOutHandler = () => {
     auth.signOut().then(() => (window.location = '/'))
   }
-  // console.log(token)
   //  Billing details to firebase database
   const [payment, setPayment] = useState('')
   const billingDataHandler = async (event) => {
