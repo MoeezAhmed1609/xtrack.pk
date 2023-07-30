@@ -21,6 +21,7 @@ const Categories = ({ products, categories, slug, setSlug }) => {
       gainerSlug.push(category)
     }
   })
+
   const aminosSlug = []
 
   categories?.map((category) => {

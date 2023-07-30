@@ -435,7 +435,7 @@ const checkout = () => {
                       </span>
                       <br />
                       <span className="pt-2 ps-2">
-                        Account Number: <strong>0333-2117276</strong>
+                        Account Number: <strong>0172 0106782669</strong>
                       </span>
                       <br />
                       <span className="pt-2 ps-2">
