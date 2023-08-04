@@ -12,6 +12,7 @@ import {
 import commerce from '../lib/commerce'
 import { client } from '../lib/client'
 import StateContext from '../context/StateContext'
+import * as fbq from "../lib/pixel";
 
 export default function Home({ products }) {
   const context = useContext(StateContext)
